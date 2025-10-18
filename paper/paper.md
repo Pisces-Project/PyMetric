@@ -199,6 +199,6 @@ field = pym.DenseField.from_function(
 # Compute Laplacian
 F_lap = field.element_wise_laplacian()
 ```
-![A scalar field $F(r,\theta)$ and its Laplacian $\nabla^2 F(r,\theta)$, computed in spherical coordinates using PyMetric.](fig1.png){ width=85% }
+![A scalar field $F(r,\theta) = r\cos(\theta)$ and its Laplacian $\nabla^2 F(r,\theta)$, computed in spherical coordinates using PyMetric.](fig1.png){ width=85% }
 
 # References
