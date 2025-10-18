@@ -25,38 +25,38 @@ bibliography: paper.bib
 PyMetric is a lightweight Python library designed to streamline differential geometry
 and vector calculus operations in user-defined coordinate systems, with a focus on applications
 in astrophysics and computational physics. The library was originally created to provide a
-geometric backend for the Pisces project, an (in development) general purpose astrophysical modeling and initial conditions
+geometric backend for the Pisces project, an in-development, general purpose astrophysical modeling and initial conditions
 library, but has since grown into an independent library due to its size and complexity. In many physical modeling tasks, it is both natural
 and advantageous to work in non-Cartesian coordinate systems that align with the inherent
-symmetries of the system. These systems can be highly nontrivial—such as ellipsoidal
-(homoeoidal) or spheroidal coordinates—where explicitly handling coordinate-specific
-expressions becomes tedious and error-prone. PyMetric provides a unified abstraction
+symmetries of the system. These coordinate systems can feature complex geometric structure which makes the
+explicit handling of differential operations cumbersome. This is particularly true for exotic coordinate
+systems (e.g. homoeoidal coordinate systems). PyMetric provides a unified abstraction
 that decouples the underlying coordinate representation from the operations themselves,
 allowing users to accurately compute gradients, divergences, Laplacians, and related geometric
-quantities through a consistent interface. This makes it easier to prototype and scale
+quantities through a consistent (and coordinate system agnostic) interface. This makes it easier to prototype and scale
 models in complex geometries without having to rewrite operations for each coordinate system.
 
 The core design of PyMetric relies on a hybrid symbolic-numeric model that balances efficiency,
 flexibility, and accuracy. Symbolic computation is used to derive key geometric quantities, such
-as metric tensors, Christoffel symbols, and Jacobians, directly from the structure of the coordinate
-system. These symbolic expressions preserve the full geometric context and can be reused across
-multiple evaluations. Once derived, they are compiled into optimized numerical functions that
-can be efficiently applied to array data on structured grids. This approach allows PyMetric to
-support coordinate-aware computation with minimal overhead, avoiding the need for repeated symbolic
-manipulation during runtime, while maintaining high accuracy through analytically correct geometric
+as metric tensors, Christoffel symbols, and Jacobians, from a minimal set of coordinate system properties.
+Once generated, these symbolic structures can be converted into efficient numerical routines that operate
+on array-backed data and are composed to perform higher-level operations.
+This approach allows PyMetric to support coordinate-aware computation with minimal overhead, avoiding the need for
+repeated symbolic manipulation during runtime, while maintaining high accuracy through analytically correct geometric
 expressions. The result is a powerful and extensible framework that enables NumPy-style [@harris2020array] workflows
 in complex coordinate systems without sacrificing physical fidelity.
 
 In addition to its symbolic-numeric foundation, PyMetric provides structured abstractions for grids
-and field data, supporting a range of coordinate systems and buffer backends—including in-memory arrays and
-HDF5 [@hdf5] storage for scalable computation. Users can define fields over geometric grids and apply
-differential operators without manually managing coordinate-dependent logic.
+and field data, supporting a range of coordinate systems and buffer backends. Because the PyMetric field abstraction
+is only minimally coupled to the underlying data storage, it can interface with a variety of array backends, including
+in-memory arrays and HDF5 [@hdf5] storage for lazy-loading and chunked computation. This design enables coordinate-aware
+operations to be applied efficiently to large, multidimensional datasets without compromising generality or performance.
 
-PyMetric automates core operations such as gradients, divergences, and Laplacians in a
-geometry-aware fashion, enabling accurate and efficient modeling of physical systems across
-disciplines like general relativity, magnetohydrodynamics, and planetary dynamics. By embedding
-geometric structure directly into array-based workflows, PyMetric offers a modern, extensible
-foundation for scientific computing in complex coordinate geometries.
+By automating core geometric operations across coordinate systems, PyMetric simplifies the development
+of physics-based modeling software that requires flexible geometric handling. Its design supports a broad spectrum
+of scientific computing applications, from simulating relativistic fluids to analyzing gravitational fields. In
+doing so, PyMetric establishes a modern and extensible foundation for geometry-aware computation in Python,
+enabling the creation of accurate, efficient, and scalable models in complex coordinate geometries.
 
 # Statement of need
 
@@ -81,7 +81,7 @@ To address this limitation, PyMetric was developed to be a lightweight library t
 coordinate-aware geometric computation. The library is designed to serve as the geometric backend
 for Pisces and similar modeling systems. It provides a consistent abstraction layer for defining
 coordinate systems, computing differential geometric quantities, and evaluating operators like gradients,
-divergences, and Laplacians—all without requiring the user to manage low-level
+divergences, and Laplacians; all without requiring the user to manage low-level
 details of tensor algebra or coordinate transformations.
 
 PyMetric emphasizes extensibility and modularity through four core interfaces:
@@ -161,5 +161,44 @@ for high-fidelity modeling in physics, engineering, and applied mathematics.
 PyMetric is explicitly intended as a modeling and analysis tool, not a time-domain simulation engine.
 It provides geometric infrastructure for constructing and analyzing equations defined on curved spacetimes,
 but does not aim to solve dynamical systems or perform numerical integration of time-evolving fields.
+
+# Usage Example
+
+To demonstrate the basic capabilities of the Pymetric library, we include a simple example of
+the typical workflow computing the Laplacian ($\nabla^2$) of a field in spherical coordinates.
+We use $F(r, \theta) = r \cos(\theta)$ as our test function, which has a known Laplacian of zero.
+A visualization of $F(r, \theta)$ and its Laplacian is shown in Figure 1, demonstrating
+the library’s ability to perform geometry-aware computations directly on array data.
+
+```python
+import pymetric as pym
+import numpy as np
+
+# Define spherical coordinate system and grid
+cs = pym.coordinates.SphericalCoordinateSystem()
+grid = pym.grids.GenericGrid(
+    cs,
+    [
+        np.linspace(0.1, 4.9, 300),                # r
+        np.linspace(0.01, np.pi - 0.01, 100),      # theta
+        np.linspace(0.01, 2 * np.pi - 0.01, 100),  # phi
+    ],
+    center="cell",
+    bbox=[(0, 5), (0, np.pi), (0, 2 * np.pi)],
+    ghost_zones=2,
+)
+
+# Define scalar field F(r, theta) = r * cos(theta)
+# This is a good test case since Lap(F) = 0.
+field = pym.DenseField.from_function(
+    lambda r, theta: r * np.cos(theta),
+    grid,
+    axes=["r", "theta"],
+)
+
+# Compute Laplacian
+F_lap = field.element_wise_laplacian()
+```
+![A scalar field $F(r,\theta)$ and its Laplacian $\nabla^2 F(r,\theta)$, computed in spherical coordinates using PyMetric.](fig1.png){ width=85% }
 
 # References
