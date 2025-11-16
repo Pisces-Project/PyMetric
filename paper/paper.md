@@ -122,12 +122,16 @@ as more general curvilinear systems.
 ## Field and Grid Operations
 
 Fields in PyMetric are array-backed data structures (typically NumPy or HDF5 buffers) that are explicitly
-associated with a coordinate system and grid. While fields behave like standard NumPy arrays,
+associated with a coordinate system and grid. The grid handling supports flexible discretization strategies,
+including cell-centered and node-centered layouts, as well as ghost zones for finite-difference operations.
+Support is currently provided for single-grid configurations with arbitrary spacing; however, multigrid extension
+is planned for future releases.
+While fields behave like standard NumPy arrays,
 they also carry metadata about their geometric context, including coordinate labels, spacing,
 and metric-aware tensor properties.
 
-Operations on fields—such as computing covariant derivatives, applying Laplacians,
-or transforming between bases—are automatically dispatched to appropriate symbolic
+Operations on fields, such as computing covariant derivatives, applying Laplacians,
+or transforming between bases, are automatically dispatched to appropriate symbolic
 expressions and numerical kernels based on the field’s variance and the geometry of the underlying
 coordinate system.
 
@@ -155,8 +159,8 @@ for high-fidelity modeling in physics, engineering, and applied mathematics.
 
 2. Relativistic and Non-Flat Coordinate Systems
 
-  - A key area of expansion is support for relativistic geometries, where the metric tensor is no longer positive-definite and may depend dynamically on spacetime coordinates. Planned features include:
-  - General Lorentzian manifolds, including Schwarzschild, Kerr, and FLRW spacetimes, enabling direct modeling of astrophysical systems governed by Einstein’s field equations.
+   - A key area of expansion is support for relativistic geometries, where the metric tensor is no longer positive-definite and may depend dynamically on spacetime coordinates. Planned features include:
+   - General Lorentzian manifolds, including Schwarzschild, Kerr, and FLRW spacetimes, enabling direct modeling of astrophysical systems governed by Einstein’s field equations.
 
 PyMetric is explicitly intended as a modeling and analysis tool, not a time-domain simulation engine.
 It provides geometric infrastructure for constructing and analyzing equations defined on curved spacetimes,
