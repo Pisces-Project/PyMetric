@@ -34,7 +34,6 @@ from typing import (
 )
 
 import numpy as np
-import unyt
 
 from .base import GridBase
 from .utils._exceptions import GridInitializationError
