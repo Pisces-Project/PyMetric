@@ -1,0 +1,6 @@
+fields.buffers.base.BufferBase.T
+================================
+
+.. currentmodule:: fields.buffers.base
+
+.. autoproperty:: BufferBase.T

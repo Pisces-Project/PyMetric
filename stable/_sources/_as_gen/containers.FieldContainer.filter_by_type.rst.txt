@@ -1,0 +1,6 @@
+containers.FieldContainer.filter\_by\_type
+==========================================
+
+.. currentmodule:: containers
+
+.. automethod:: FieldContainer.filter_by_type

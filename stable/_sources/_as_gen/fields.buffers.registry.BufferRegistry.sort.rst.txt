@@ -1,0 +1,6 @@
+fields.buffers.registry.BufferRegistry.sort
+===========================================
+
+.. currentmodule:: fields.buffers.registry
+
+.. automethod:: BufferRegistry.sort

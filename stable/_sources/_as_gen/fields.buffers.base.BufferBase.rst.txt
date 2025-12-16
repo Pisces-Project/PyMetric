@@ -1,0 +1,59 @@
+BufferBase
+==============================
+
+.. currentmodule:: fields.buffers.base
+
+.. autoclass:: fields.buffers.base.BufferBase
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+      :recursive:
+   
+      ~BufferBase.__init__
+      ~BufferBase.as_array
+      ~BufferBase.as_core
+      ~BufferBase.astype
+      ~BufferBase.can_resolve
+      ~BufferBase.conj
+      ~BufferBase.conjugate
+      ~BufferBase.copy
+      ~BufferBase.empty
+      ~BufferBase.empty_like
+      ~BufferBase.flatten
+      ~BufferBase.from_array
+      ~BufferBase.full
+      ~BufferBase.full_like
+      ~BufferBase.list_compatible_classes
+      ~BufferBase.ones
+      ~BufferBase.ones_like
+      ~BufferBase.ravel
+      ~BufferBase.reshape
+      ~BufferBase.resize
+      ~BufferBase.swapaxes
+      ~BufferBase.transpose
+      ~BufferBase.zeros
+      ~BufferBase.zeros_like
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+      :recursive:
+   
+      ~BufferBase.T
+      ~BufferBase.c
+      ~BufferBase.dtype
+      ~BufferBase.ndim
+      ~BufferBase.shape
+      ~BufferBase.size
+   
+   

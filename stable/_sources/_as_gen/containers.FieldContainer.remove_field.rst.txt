@@ -1,0 +1,6 @@
+containers.FieldContainer.remove\_field
+=======================================
+
+.. currentmodule:: containers
+
+.. automethod:: FieldContainer.remove_field

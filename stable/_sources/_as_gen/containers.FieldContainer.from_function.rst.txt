@@ -1,0 +1,6 @@
+containers.FieldContainer.from\_function
+========================================
+
+.. currentmodule:: containers
+
+.. automethod:: FieldContainer.from_function

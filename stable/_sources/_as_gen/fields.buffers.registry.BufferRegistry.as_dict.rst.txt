@@ -1,0 +1,6 @@
+fields.buffers.registry.BufferRegistry.as\_dict
+===============================================
+
+.. currentmodule:: fields.buffers.registry
+
+.. automethod:: BufferRegistry.as_dict

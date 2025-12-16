@@ -1,0 +1,1305 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fields.buffers.core &#8212; PyMetric  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/fields/buffers/core';</script>
+    <link rel="icon" href="../../../_static/pm_favicon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">PyMetric  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../auto_quickstart/index.html">
+    PyMetric Quickstart Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../auto_examples/index.html">
+    Example Gallery
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    PyMetric User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../api_base.html">
+    API
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../auto_quickstart/index.html">
+    PyMetric Quickstart Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../auto_examples/index.html">
+    Example Gallery
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    PyMetric User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../api_base.html">
+    API
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">fields.buffers.core</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for fields.buffers.core</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Core buffer types for PyMetric data management.</span>
+
+<span class="sd">This module defines the core buffer backends used by the PyMetric framework.</span>
+<span class="sd">Each buffer subclass implements the shared interface defined in :class:`~fields.buffers.base.BufferBase`,</span>
+<span class="sd">but supports a distinct storage strategy.</span>
+
+<span class="sd">Usage Notes</span>
+<span class="sd">-----------</span>
+
+<span class="sd">These buffers serve as drop-in storage layers for data fields, components, and other high-level PyMetric components.</span>
+<span class="sd">They ensure consistent semantics for field creation, manipulation, and resolution, regardless of backend format.</span>
+
+<span class="sd">All buffer classes:</span>
+
+<span class="sd">See Also</span>
+<span class="sd">--------</span>
+<span class="sd">:class:`~fields.buffers.base.BufferBase`</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Type</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">h5py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">numpy.typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArrayLike</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymetric.fields.buffers.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">BufferBase</span>
+
+
+<div class="viewcode-block" id="ArrayBuffer">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.ArrayBuffer.html#fields.buffers.core.ArrayBuffer">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ArrayBuffer</span><span class="p">(</span><span class="n">BufferBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A lightweight buffer wrapper around a plain `NumPy &lt;https://numpy.org/doc/stable/index.html&gt;`__ array.</span>
+
+<span class="sd">    This class provides a minimal backend for storing field data using</span>
+<span class="sd">    standard :class:`numpy.ndarray` objects. It is designed for general-purpose use cases</span>
+<span class="sd">    where advanced I/O (e.g., HDF5) is not required.</span>
+
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Create a buffer from a 2D list:</span>
+
+<span class="sd">    &gt;&gt;&gt; buf = ArrayBuffer.from_array([[1, 2], [3, 4]])</span>
+<span class="sd">    &gt;&gt;&gt; buf</span>
+<span class="sd">    ArrayBuffer(shape=(2, 2), dtype=int64)</span>
+
+<span class="sd">    Create a zero-initialized buffer with shape (3, 3):</span>
+
+<span class="sd">    &gt;&gt;&gt; ArrayBuffer.zeros((3, 3)).as_array()</span>
+<span class="sd">    array([[0., 0., 0.],</span>
+<span class="sd">           [0., 0., 0.],</span>
+<span class="sd">           [0., 0., 0.]])</span>
+
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    HDF5Buffer: HDF5 backed buffer.</span>
+<span class="sd">    ~fields.buffers.base.BufferBase : Abstract interface for all buffer backends.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># Class Flags                         #</span>
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># These flags are class level markers indicating the behavior</span>
+    <span class="c1"># of the class. They should be configured in subclasses.</span>
+    <span class="n">__is_abc__</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">__buffer_resolution_compatible_classes__</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">]</span>
+    <span class="n">__buffer_resolution_priority__</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">__array_function_dispatch__</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Callable</span><span class="p">,</span> <span class="n">Callable</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># Initialization Methods              #</span>
+    <span class="c1"># =================================== #</span>
+<div class="viewcode-block" id="ArrayBuffer.__init__">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.ArrayBuffer.__init__.html#fields.buffers.core.ArrayBuffer.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">array</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize an ArrayBuffer from a NumPy array.</span>
+
+<span class="sd">        This constructor wraps a standard in-memory :class:`numpy.ndarray` and exposes</span>
+<span class="sd">        it via the PyMetric buffer interface. It does not copy the input unless required</span>
+<span class="sd">        by downstream operations; the buffer holds a direct reference to the array.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        array : numpy.ndarray</span>
+<span class="sd">            The array to wrap. Must be a valid NumPy array of any shape or dtype.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        TypeError</span>
+<span class="sd">            If the input is not a :class:`numpy.ndarray`.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        - This constructor is typically called internally by :meth:`from_array`.</span>
+<span class="sd">        - Use :meth:`ArrayBuffer.from_array` for a safe, flexible entry point that</span>
+<span class="sd">          can accept non-NumPy types (e.g., lists, scalars).</span>
+<span class="sd">        - This class provides lightweight, zero-copy wrapping for in-memory data.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">        &gt;&gt;&gt; from pymetric.fields.buffers import ArrayBuffer</span>
+<span class="sd">        &gt;&gt;&gt; arr = np.arange(6).reshape(2, 3)</span>
+<span class="sd">        &gt;&gt;&gt; buf = ArrayBuffer(arr)</span>
+<span class="sd">        &gt;&gt;&gt; print(buf.shape)</span>
+<span class="sd">        (2, 3)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__validate_array_object__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Expected a NumPy array, got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="p">)</span>
+
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># Generator Methods                   #</span>
+    <span class="c1"># =================================== #</span>
+<div class="viewcode-block" id="ArrayBuffer.from_array">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.ArrayBuffer.from_array.html#fields.buffers.core.ArrayBuffer.from_array">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_array</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ArrayBuffer&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Construct a new :class:`ArrayBuffer` from an arbitrary array-like input.</span>
+
+<span class="sd">        This method attempts to coerce the input into a valid :class:`numpy.ndarray` and wrap</span>
+<span class="sd">        it in an :class:`ArrayBuffer` instance. It serves as the standard mechanism</span>
+<span class="sd">        for converting raw or structured numerical data (e.g., lists, tuples, or other</span>
+<span class="sd">        array-compatible types) into a compatible buffer for numerical operations.</span>
+
+<span class="sd">        This constructor mimics the behavior of :func:`numpy.array` and accepts</span>
+<span class="sd">        keyword arguments like `dtype`, `order`, and `copy` to control how the data</span>
+<span class="sd">        is materialized. Subclasses may override this method to enforce stricter</span>
+<span class="sd">        requirements or attach additional metadata.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        obj : array-like</span>
+<span class="sd">            Input data to be wrapped. This can include Python lists, tuples,</span>
+<span class="sd">            NumPy arrays, or other objects that support array conversion via</span>
+<span class="sd">            :func:`numpy.array()`.</span>
+<span class="sd">        *args, **kwargs :</span>
+<span class="sd">            Additional keyword arguments passed to :func:`numpy.array` to control</span>
+<span class="sd">            coercion behavior (e.g., `copy`, `order`, etc.).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ArrayBuffer</span>
+<span class="sd">            A buffer instance wrapping the resulting :class:`numpy.ndarray`.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        TypeError</span>
+<span class="sd">            If the input cannot be coerced into a NumPy array.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="ArrayBuffer.zeros">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.ArrayBuffer.zeros.html#fields.buffers.core.ArrayBuffer.zeros">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zeros</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ArrayBuffer&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a buffer initialized with zeros.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        shape : tuple of int</span>
+<span class="sd">            Shape of the buffer (grid + element dimensions).</span>
+<span class="sd">        *args, **kwargs :</span>
+<span class="sd">            arguments forwarded to :func:`numpy.zeros` (e.g., dtype).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ArrayBuffer</span>
+<span class="sd">            A zero-filled buffer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="ArrayBuffer.ones">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.ArrayBuffer.ones.html#fields.buffers.core.ArrayBuffer.ones">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ones</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ArrayBuffer&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a buffer initialized with ones.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        shape : tuple of int</span>
+<span class="sd">            Shape of the buffer (grid + element dimensions).</span>
+<span class="sd">        *args, **kwargs :</span>
+<span class="sd">            arguments forwarded to :func:`numpy.ones` (e.g., dtype).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ArrayBuffer</span>
+<span class="sd">            A one-filled buffer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="ArrayBuffer.full">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.ArrayBuffer.full.html#fields.buffers.core.ArrayBuffer.full">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">full</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ArrayBuffer&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a buffer filled with a constant value.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        shape : tuple of int</span>
+<span class="sd">            Shape of the buffer (grid + element dimensions).</span>
+<span class="sd">        fill_value : scalar, optional</span>
+<span class="sd">            The constant value to use for every element. By default, this is ``0.0``.</span>
+<span class="sd">        *args, **kwargs :</span>
+<span class="sd">            arguments forwarded to :func:`numpy.full` (e.g., dtype).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ArrayBuffer</span>
+<span class="sd">            A buffer filled with the given value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="ArrayBuffer.empty">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.ArrayBuffer.empty.html#fields.buffers.core.ArrayBuffer.empty">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">empty</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ArrayBuffer&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a new buffer of given shape and type, without initializing entries.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        shape : tuple of int</span>
+<span class="sd">            Shape of the buffer (grid + element dimensions).</span>
+<span class="sd">        *args, **kwargs :</span>
+<span class="sd">            arguments forwarded to :func:`numpy.empty` (e.g., dtype).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ArrayBuffer</span>
+<span class="sd">            An uninitialized buffer (contents may be arbitrary).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="HDF5Buffer">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.HDF5Buffer.html#fields.buffers.core.HDF5Buffer">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">HDF5Buffer</span><span class="p">(</span><span class="n">BufferBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A disk-backed buffer that wraps an `h5py.Dataset` for persistent field storage.</span>
+
+<span class="sd">    This class provides a PyMetric-compatible buffer interface for data stored in</span>
+<span class="sd">    HDF5 files. It is particularly suited for large-scale or long-lived datasets</span>
+<span class="sd">    that exceed in-memory limits or require persistent storage across sessions.</span>
+
+<span class="sd">    Unlike in-memory buffers (e.g., :class:`ArrayBuffer`), `HDF5Buffer` instances</span>
+<span class="sd">    operate on datasets saved to disk via `h5py`. They support standard buffer semantics</span>
+<span class="sd">    including indexing, broadcasting, NumPy interoperability, and context management,</span>
+<span class="sd">    while handling backend-specific logic such as file ownership and I/O flushing.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Create a new HDF5 buffer from an in-memory array:</span>
+
+<span class="sd">    &gt;&gt;&gt; from pymetric.fields.buffers import HDF5Buffer</span>
+<span class="sd">    &gt;&gt;&gt; buf = HDF5Buffer.from_array([[1, 2], [3, 4]], file=&quot;data.h5&quot;, path=&quot;/example&quot;)</span>
+
+<span class="sd">    Open an existing dataset:</span>
+
+<span class="sd">    &gt;&gt;&gt; with HDF5Buffer.open(&quot;data.h5&quot;, &quot;/example&quot;, close_on_exit=True) as buf:</span>
+<span class="sd">    ...     print(buf.shape)</span>
+
+<span class="sd">    Update a buffer in place using a NumPy ufunc:</span>
+
+<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
+<span class="sd">    &gt;&gt;&gt; np.add(buf, 1.0, out=buf)</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    - When `make_owner=True`, the buffer is responsible for closing the file.</span>
+<span class="sd">    - You can manually call :meth:`flush()` to write buffered changes to disk.</span>
+<span class="sd">    - Use context management (``with``) to ensure safe file handling.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    ArrayBuffer : Lightweight in-memory buffer using :class:`numpy.ndarray`.</span>
+<span class="sd">    ~fields.buffers.base.BufferBase : Abstract base class for all buffers.</span>
+<span class="sd">    h5py.Dataset : Underlying dataset format used in this buffer.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># Class Flags                         #</span>
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># These flags are class level markers indicating the behavior</span>
+    <span class="c1"># of the class. They should be configured in subclasses.</span>
+    <span class="n">__is_abc__</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">__buffer_resolution_priority__</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">__buffer_resolution_compatible_classes__</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Type</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="n">h5py</span><span class="o">.</span><span class="n">Dataset</span><span class="p">]</span>
+    <span class="n">__array_function_dispatch__</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Callable</span><span class="p">,</span> <span class="n">Callable</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># Initialization Methods              #</span>
+    <span class="c1"># =================================== #</span>
+<div class="viewcode-block" id="HDF5Buffer.__init__">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.HDF5Buffer.__init__.html#fields.buffers.core.HDF5Buffer.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">array</span><span class="p">:</span> <span class="n">h5py</span><span class="o">.</span><span class="n">Dataset</span><span class="p">,</span> <span class="n">owns_file</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an :class:`HDF5Buffer` object.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        array : h5py.Dataset</span>
+<span class="sd">            Open dataset to wrap. *Must* remain valid for the buffer&#39;s lifetime.</span>
+<span class="sd">        owns_file : bool, optional</span>
+<span class="sd">            If True, the buffer will close the file when exiting its context.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__is_owner__</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">owns_file</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__validate_array_object__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="p">,</span> <span class="n">h5py</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Expected an HDF5 dataset, got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Check that the h5py object is successfully opened</span>
+        <span class="c1"># and has a valid status.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">valid</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;HDF5 dataset is not valid or has been closed.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;HDF5Buffer&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Enter the buffer context.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Exit the context: flush and optionally close file if owned.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__is_owner__</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># Generator Methods                   #</span>
+    <span class="c1"># =================================== #</span>
+<div class="viewcode-block" id="HDF5Buffer.create_dataset">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.HDF5Buffer.create_dataset.html#fields.buffers.core.HDF5Buffer.create_dataset">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_dataset</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">file</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">],</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">shape</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">tuple</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">dtype</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ArrayLike</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">h5py</span><span class="o">.</span><span class="n">Dataset</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an HDF5 dataset in a file and return the resulting `h5py.Dataset`.</span>
+
+<span class="sd">        This utility is used internally by `HDF5Buffer` to create datasets from raw data.</span>
+<span class="sd">        If a dataset with the given name already exists, it can be optionally overwritten.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        file : str, Path, or h5py.File</span>
+<span class="sd">            Path to the HDF5 file or an open `h5py.File` object. This is the parent object</span>
+<span class="sd">            into which the dataset will be created.</span>
+<span class="sd">        name : str</span>
+<span class="sd">            Name of dataset to create. May be an absolute or relative path.</span>
+<span class="sd">            Provide ``None`` to create an anonymous dataset, to be linked into the file later.</span>
+<span class="sd">        shape : tuple of int, optional</span>
+<span class="sd">            Desired shape of the dataset. Required if `data` is not provided.</span>
+<span class="sd">        dtype : data-type, optional</span>
+<span class="sd">            Data type of the dataset. Inferred from `data` if not provided.</span>
+<span class="sd">        data : array-like, optional</span>
+<span class="sd">            Input data to populate the dataset. If provided, `shape` and `dtype` are optional.</span>
+<span class="sd">        overwrite : bool, default False</span>
+<span class="sd">            Whether to delete and replace an existing dataset with the same name.</span>
+<span class="sd">        **kwargs :</span>
+<span class="sd">            Additional keyword arguments passed to `h5py.File.create_dataset`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        h5py.Dataset</span>
+<span class="sd">            A created dataset ready to be wrapped in a buffer.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        FileNotFoundError</span>
+<span class="sd">            If the HDF5 file path does not exist and file creation is not permitted.</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If the dataset already exists and `overwrite` is not set.</span>
+<span class="sd">        TypeError</span>
+<span class="sd">            If the `file` parameter is neither a path nor an `h5py.File`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Open and validate the file. Ensure it exists / create it</span>
+        <span class="c1"># and then do the necessary logic progression to ensure consistency.</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">)):</span>
+            <span class="n">file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">file</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                <span class="n">file</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">file</span><span class="o">.</span><span class="n">touch</span><span class="p">()</span>
+
+            <span class="n">file</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;r+&quot;</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;`file` must be a path or h5py.File, got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Check for pre-existing dataset</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">overwrite</span><span class="p">:</span>
+                <span class="k">del</span> <span class="n">file</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Dataset &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; already exists. Use `overwrite=True` to replace it.&quot;</span>
+                <span class="p">)</span>
+
+        <span class="c1"># Create the dataset</span>
+        <span class="n">dset</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dset</span></div>
+
+
+    <span class="c1"># noinspection PyIncorrectDocstring</span>
+<div class="viewcode-block" id="HDF5Buffer.from_array">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.HDF5Buffer.from_array.html#fields.buffers.core.HDF5Buffer.from_array">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_array</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+        <span class="n">file</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="n">dtype</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;HDF5Buffer&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Construct an HDF5-backed buffer from an array-like object or existing HDF5 dataset.</span>
+
+<span class="sd">        This method wraps either:</span>
+
+<span class="sd">        - an existing `h5py.Dataset`, or</span>
+<span class="sd">        - arbitrary in-memory data by creating a new dataset in the specified HDF5 file.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        obj : array-like or :class:`~h5py.Dataset`</span>
+<span class="sd">            The data to store. If already a :class:`h5py.Dataset`, it is wrapped directly.</span>
+<span class="sd">            Otherwise, it is coerced to a `unyt_array` and stored in a new dataset.</span>
+<span class="sd">        file : str, Path, or :class:`~h5py.File`, optional</span>
+<span class="sd">            Path to the HDF5 file or an open file object. Required if `obj` is not already a dataset.</span>
+<span class="sd">        path : str, optional</span>
+<span class="sd">            Internal path for the new dataset in the HDF5 file. Required if `obj` is not already a dataset.</span>
+<span class="sd">        dtype : data-type, optional</span>
+<span class="sd">            Desired data type of the dataset. Defaults to the dtype inferred from `obj`.</span>
+<span class="sd">        overwrite : bool, default False</span>
+<span class="sd">            If True, any existing dataset at the given path will be deleted and replaced.</span>
+<span class="sd">        **kwargs :</span>
+<span class="sd">            Additional keyword arguments forwarded to :meth:`create_dataset`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        HDF5Buffer</span>
+<span class="sd">            A lazily-loaded buffer backed by an HDF5 dataset.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            If `file` or `path` is not specified when required.</span>
+<span class="sd">        TypeError</span>
+<span class="sd">            If input types are not supported or invalid.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        HDF5Buffer.create_dataset : Core method used for new dataset creation.</span>
+<span class="sd">        buffer_from_array : Registry-based entry point to buffer resolution.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Case 1: Wrap an existing HDF5 dataset directly</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">h5py</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
+            <span class="n">is_owner</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;make_owner&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">owns_file</span><span class="o">=</span><span class="n">is_owner</span><span class="p">)</span>
+
+        <span class="c1"># Case 2: Create a new dataset from in-memory data</span>
+        <span class="k">if</span> <span class="n">file</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Both `file` and `path` must be specified to create a new HDF5 dataset.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">is_owner</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;make_owner&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">dataset</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span>
+            <span class="n">file</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">array</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">array</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">owns_file</span><span class="o">=</span><span class="n">is_owner</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="HDF5Buffer.open">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.HDF5Buffer.open.html#fields.buffers.core.HDF5Buffer.open">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">open</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">file</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">],</span>
+        <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;r+&quot;</span><span class="p">,</span>
+        <span class="n">close_on_exit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;HDF5Buffer&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Open an existing HDF5 dataset and wrap it as a buffer.</span>
+
+<span class="sd">        This method provides controlled access to an HDF5 dataset stored within</span>
+<span class="sd">        a file, supporting both file paths and already opened `h5py.File` objects.</span>
+
+<span class="sd">        If `close_on_exit=True`, the returned buffer will automatically close the</span>
+<span class="sd">        underlying file when used in a `with` block or when `close()` is called.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        file : str, Path, or h5py.File</span>
+<span class="sd">            The HDF5 file containing the dataset. May be a file path or an open handle.</span>
+<span class="sd">        path : str</span>
+<span class="sd">            The internal path to the dataset within the file (e.g., &quot;/my/data&quot;).</span>
+<span class="sd">        mode : str, default &quot;r+&quot;</span>
+<span class="sd">            Mode to use when opening the file if a path is provided. Ignored if `file` is already open.</span>
+<span class="sd">        close_on_exit : bool, default False</span>
+<span class="sd">            Whether the buffer should take ownership of the file and close it on exit.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        HDF5Buffer</span>
+<span class="sd">            A buffer wrapping the specified HDF5 dataset.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        FileNotFoundError</span>
+<span class="sd">            If the provided file path does not exist.</span>
+<span class="sd">        KeyError</span>
+<span class="sd">            If the specified dataset does not exist in the file.</span>
+<span class="sd">        TypeError</span>
+<span class="sd">            If `file` is not a string, Path, or h5py.File.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; with HDF5Buffer.open(&quot;data.h5&quot;, &quot;temperature&quot;, close_on_exit=True) as buf:</span>
+<span class="sd">        ...     print(buf.shape)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Open the file if it&#39;s a path</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">)):</span>
+            <span class="n">file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">file</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;HDF5 file &#39;</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2">&#39; does not exist.&quot;</span><span class="p">)</span>
+            <span class="n">file_obj</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">):</span>
+            <span class="n">file_obj</span> <span class="o">=</span> <span class="n">file</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;`file` must be a path or h5py.File, got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Look up the dataset inside the file</span>
+        <span class="k">if</span> <span class="n">path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">file_obj</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dataset &#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&#39; not found in file.&quot;</span><span class="p">)</span>
+
+        <span class="n">dataset</span> <span class="o">=</span> <span class="n">file_obj</span><span class="p">[</span><span class="n">path</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">owns_file</span><span class="o">=</span><span class="n">close_on_exit</span><span class="p">)</span></div>
+
+
+    <span class="c1"># ------------------------------ #</span>
+    <span class="c1"># Properties                     #</span>
+    <span class="c1"># ------------------------------ #</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_open</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;True if the underlying dataset is still attached to an open file.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">bool</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">valid</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">filename</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Absolute path to the file backing this buffer.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str or None</span>
+<span class="sd">            Full path of the file, or None if unavailable.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="o">.</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;filename&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">file</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The open `h5py.File` object backing this buffer.</span>
+
+<span class="sd">        This provides direct access to the HDF5 file handle used internally.</span>
+<span class="sd">        It is useful for advanced workflows that require access to groups,</span>
+<span class="sd">        attributes, or metadata outside the dataset.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        h5py.File</span>
+<span class="sd">            The HDF5 file containing the dataset.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="o">.</span><span class="n">file</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal HDF5 path to the dataset.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            The full dataset path within the HDF5 file (e.g., &quot;/data/temperature&quot;).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_owner</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Whether this buffer owns the file (i.e., responsible for closing it).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            True if this buffer should close the file on `__exit__` or `close()`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__is_owner__</span>
+
+    <span class="c1"># ------------------------------ #</span>
+    <span class="c1"># Numpy Semantics                #</span>
+    <span class="c1"># ------------------------------ #</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;HDF5Buffer(shape=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">, dtype=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="si">}</span><span class="s2">, path=&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;)&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">_raw_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+        <span class="c1"># Avoid broadcasting if value is scalar#</span>
+        <span class="k">if</span> <span class="n">_raw_value</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">_raw_value</span> <span class="o">=</span> <span class="n">_raw_value</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="n">_raw_value</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__array_ufunc__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ufunc</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="o">*</span><span class="n">inputs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Override BufferBase.__array_ufunc__ to catch instances where HDF5Buffer</span>
+<span class="sd">        is a specified output of the operation. Because HDF5 Dataset types cannot</span>
+<span class="sd">        handle in place operations, we use a sleight of hand to perform the comp.</span>
+<span class="sd">        in memory and then assign under the hood.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Extract the `out` kwarg if it is present.</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;out&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">out</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Normalize to tuple for uniform handling</span>
+            <span class="n">is_tuple</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span>
+            <span class="n">out_tuple</span> <span class="o">=</span> <span class="n">out</span> <span class="k">if</span> <span class="n">is_tuple</span> <span class="k">else</span> <span class="p">(</span><span class="n">out</span><span class="p">,)</span>
+
+            <span class="c1"># Run the operation and capture result(s).</span>
+            <span class="c1"># This doesn&#39;t have `out` in it because of .pop() so</span>
+            <span class="c1"># we&#39;re just forwarding.</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__array_ufunc__</span><span class="p">(</span><span class="n">ufunc</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="o">*</span><span class="n">inputs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+            <span class="c1"># Coerce the typing and check that the lengths are</span>
+            <span class="c1"># correctly matched.</span>
+            <span class="n">result_tuple</span> <span class="o">=</span> <span class="n">result</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">result</span><span class="p">,)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result_tuple</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">out_tuple</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">out_tuple</span><span class="p">)</span><span class="si">}</span><span class="s2"> outputs, got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">result_tuple</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+            <span class="c1"># Assign results into HDF5-backed targets</span>
+            <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">result_tuple</span><span class="p">,</span> <span class="n">out_tuple</span><span class="p">):</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">):</span>
+                    <span class="n">o</span><span class="o">.</span><span class="n">__array_object__</span><span class="p">[</span>
+                        <span class="o">...</span>
+                    <span class="p">]</span> <span class="o">=</span> <span class="n">r</span>  <span class="c1"># assign in-memory result into HDF5 buffer</span>
+
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;All `out=` targets must be HDF5Buffer instances&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Pass result through based on the typing.</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">out_tuple</span>
+            <span class="k">elif</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">out_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="c1"># No `out` to catch, simply push on to the super method.</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__array_ufunc__</span><span class="p">(</span><span class="n">ufunc</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="o">*</span><span class="n">inputs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="c1"># ------------------------------ #</span>
+    <span class="c1"># Generator Methods              #</span>
+    <span class="c1"># ------------------------------ #</span>
+<div class="viewcode-block" id="HDF5Buffer.zeros">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.HDF5Buffer.zeros.html#fields.buffers.core.HDF5Buffer.zeros">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zeros</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">shape</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="nb">float</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;HDF5Buffer&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an HDF5-backed buffer filled with zeros.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        shape : tuple of int</span>
+<span class="sd">            Desired shape of the dataset.</span>
+<span class="sd">        dtype : data-type, default float</span>
+<span class="sd">            Element type of the dataset.</span>
+<span class="sd">        *args :</span>
+<span class="sd">            Additional positional arguments passed to `create_dataset`.</span>
+<span class="sd">        **kwargs :</span>
+<span class="sd">            Keyword arguments forwarded to `create`, such as:</span>
+
+<span class="sd">            - parent : h5py.File or h5py.Group</span>
+<span class="sd">            - dataset_name : str</span>
+<span class="sd">            - overwrite : bool</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        HDF5Buffer</span>
+<span class="sd">            A buffer wrapping a zero-filled HDF5 dataset.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="HDF5Buffer.ones">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.HDF5Buffer.ones.html#fields.buffers.core.HDF5Buffer.ones">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ones</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">shape</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="nb">float</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;HDF5Buffer&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an HDF5-backed buffer filled with ones.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        shape : tuple of int</span>
+<span class="sd">            Desired shape of the dataset.</span>
+<span class="sd">        dtype : data-type, default float</span>
+<span class="sd">            Element type of the dataset.</span>
+<span class="sd">        *args :</span>
+<span class="sd">            Additional positional arguments passed to `create_dataset`.</span>
+<span class="sd">        **kwargs :</span>
+<span class="sd">            Keyword arguments forwarded to `create`, such as:</span>
+
+<span class="sd">            - parent : h5py.File or h5py.Group</span>
+<span class="sd">            - dataset_name : str</span>
+<span class="sd">            - overwrite : bool</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        HDF5Buffer</span>
+<span class="sd">            A buffer wrapping a one-filled HDF5 dataset.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="HDF5Buffer.full">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.HDF5Buffer.full.html#fields.buffers.core.HDF5Buffer.full">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">full</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">shape</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="n">fill_value</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">dtype</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;HDF5Buffer&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an HDF5-backed buffer filled with a constant value or quantity.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        shape : tuple of int</span>
+<span class="sd">            Desired shape of the dataset.</span>
+<span class="sd">        fill_value : scalar, array-like, or unyt_quantity, default 0.0</span>
+<span class="sd">            Value to initialize the dataset with. Can be:</span>
+<span class="sd">            - A plain scalar (e.g., 3.14)</span>
+<span class="sd">            - A NumPy array or similar array-like object</span>
+<span class="sd">        dtype : data-type, default float</span>
+<span class="sd">            Element type of the dataset.</span>
+<span class="sd">        *args :</span>
+<span class="sd">            Additional positional arguments passed to `create_dataset`.</span>
+<span class="sd">        **kwargs :</span>
+<span class="sd">            Keyword arguments forwarded to `create`, such as:</span>
+
+<span class="sd">            - parent : h5py.File or h5py.Group</span>
+<span class="sd">            - dataset_name : str</span>
+<span class="sd">            - overwrite : bool</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        HDF5Buffer</span>
+<span class="sd">            A buffer wrapping a constant-filled HDF5 dataset.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span>
+                <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span>
+            <span class="p">)</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="HDF5Buffer.empty">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.HDF5Buffer.empty.html#fields.buffers.core.HDF5Buffer.empty">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">empty</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">shape</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="nb">float</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;HDF5Buffer&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an HDF5-backed buffer filled with zeros. Equivalent to :meth:`zeros`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">file</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="HDF5Buffer.as_array">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.HDF5Buffer.as_array.html#fields.buffers.core.HDF5Buffer.as_array">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">as_array</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a NumPy array view of the full dataset.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="p">[:])</span></div>
+
+
+<div class="viewcode-block" id="HDF5Buffer.close">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.HDF5Buffer.close.html#fields.buffers.core.HDF5Buffer.close">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">force</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Close the underlying HDF5 file, if owned by this buffer.</span>
+
+<span class="sd">        This method closes the file used by this buffer if:</span>
+<span class="sd">        - It was opened by the buffer (i.e., the buffer owns it), or</span>
+<span class="sd">        - `force=True` is explicitly specified.</span>
+
+<span class="sd">        After calling this method, the buffer becomes invalid for further</span>
+<span class="sd">        access or modification. Attempting to access data will raise errors.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        force : bool, default False</span>
+<span class="sd">            If True, closes the file regardless of ownership.</span>
+<span class="sd">            Use with care to avoid interfering with shared file handles.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        AttributeError</span>
+<span class="sd">            If the file handle is already invalid or closed.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        flush : For non-destructive persistence.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__is_owner__</span> <span class="ow">or</span> <span class="n">force</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="HDF5Buffer.flush">
+<a class="viewcode-back" href="../../../_as_gen/fields.buffers.core.HDF5Buffer.flush.html#fields.buffers.core.HDF5Buffer.flush">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">flush</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Flush any buffered data to disk without closing the file.</span>
+
+<span class="sd">        This method ensures that any pending write operations are committed</span>
+<span class="sd">        to the backing HDF5 file. It is safe to call multiple times and does</span>
+<span class="sd">        nothing if the file is read-only or already closed.</span>
+
+<span class="sd">        This is useful in long-running operations where intermediate data</span>
+<span class="sd">        should be saved but the file should remain open.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        close : For final closure of the file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Eliza Diggins.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+grids.core.UniformGrid.to\_metadata\_dict
+=========================================
+
+.. currentmodule:: grids.core
+
+.. automethod:: UniformGrid.to_metadata_dict

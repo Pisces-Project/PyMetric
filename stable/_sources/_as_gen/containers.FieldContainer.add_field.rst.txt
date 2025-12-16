@@ -1,0 +1,6 @@
+containers.FieldContainer.add\_field
+====================================
+
+.. currentmodule:: containers
+
+.. automethod:: FieldContainer.add_field

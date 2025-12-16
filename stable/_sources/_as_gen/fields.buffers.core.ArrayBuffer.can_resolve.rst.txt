@@ -1,0 +1,6 @@
+fields.buffers.core.ArrayBuffer.can\_resolve
+============================================
+
+.. currentmodule:: fields.buffers.core
+
+.. automethod:: ArrayBuffer.can_resolve

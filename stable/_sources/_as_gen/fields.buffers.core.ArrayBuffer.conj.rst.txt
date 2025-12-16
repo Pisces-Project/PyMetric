@@ -1,0 +1,6 @@
+fields.buffers.core.ArrayBuffer.conj
+====================================
+
+.. currentmodule:: fields.buffers.core
+
+.. automethod:: ArrayBuffer.conj

@@ -1,0 +1,6 @@
+containers.FieldContainer.items
+===============================
+
+.. currentmodule:: containers
+
+.. automethod:: FieldContainer.items

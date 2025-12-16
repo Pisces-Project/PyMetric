@@ -1,0 +1,6 @@
+fields.buffers.registry.BufferRegistry.is\_registered
+=====================================================
+
+.. currentmodule:: fields.buffers.registry
+
+.. automethod:: BufferRegistry.is_registered

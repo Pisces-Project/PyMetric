@@ -1,0 +1,6 @@
+containers.FieldContainer.coordinate\_system
+============================================
+
+.. currentmodule:: containers
+
+.. autoproperty:: FieldContainer.coordinate_system

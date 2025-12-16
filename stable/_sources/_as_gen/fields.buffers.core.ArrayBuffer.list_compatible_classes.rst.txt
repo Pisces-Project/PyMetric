@@ -1,0 +1,6 @@
+fields.buffers.core.ArrayBuffer.list\_compatible\_classes
+=========================================================
+
+.. currentmodule:: fields.buffers.core
+
+.. automethod:: ArrayBuffer.list_compatible_classes

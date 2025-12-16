@@ -1,0 +1,6 @@
+coordinates.core.CurvilinearCoordinateSystem.to\_json
+=====================================================
+
+.. currentmodule:: coordinates.core
+
+.. automethod:: CurvilinearCoordinateSystem.to_json

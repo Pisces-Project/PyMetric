@@ -1,0 +1,777 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Geometric Grids: Custom Grid Classes &#8212; PyMetric  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/grids/build_custom_grids';</script>
+    <link rel="icon" href="../../_static/pm_favicon.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Fields: Overview" href="../fields/overview.html" />
+    <link rel="prev" title="Geometric Grids: General Info" href="overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">PyMetric  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../auto_quickstart/index.html">
+    PyMetric Quickstart Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../auto_examples/index.html">
+    Example Gallery
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    PyMetric User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api_base.html">
+    API
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../auto_quickstart/index.html">
+    PyMetric Quickstart Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../auto_examples/index.html">
+    Example Gallery
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    PyMetric User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api_base.html">
+    API
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../theory/coordinate_theory.html">Curvilinear Coordinate Systems</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../coordinates/overview.html">Coordinate Systems: General Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coordinates/building_coordinate_systems.html">Coordinate Systems: Building Custom Coordinate Systems</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Geometric Grids: General Info</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Geometric Grids: Custom Grid Classes</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fields/overview.html">Fields: Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fields/numpy.html">Fields: NumPy Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fields/buffers.html">Fields: Data Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fields/components.html">Fields: Field Components</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../differential_geometry/overview.html">Differential Geometry: Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../differential_geometry/dependence.html">Symbolic Tensor Dependence API</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../coordinates/dev.html">Coordinate Systems: Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html">Geometric Grids: Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fields/dev.html">Fields: Developers</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">PyMetric User Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Geometric Grids: Custom Grid Classes</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="geometric-grids-custom-grid-classes">
+<span id="grids-building"></span><h1>Geometric Grids: Custom Grid Classes<a class="headerlink" href="#geometric-grids-custom-grid-classes" title="Link to this heading">#</a></h1>
+<p>Grids in PyMetric define the structure of computational domains, encapsulating coordinate systems,
+domain resolution, ghost zones, chunking behavior, and coordinate retrieval.
+Grid classes are central to all spatial discretizations but <strong>do not</strong> store field values themselves.
+Instead, they provide structural context and metadata to higher-level components.</p>
+<p>PyMetric includes a flexible and extensible grid framework based on the <a class="reference internal" href="../../_as_gen/grids.base.GridBase.html#grids.base.GridBase" title="grids.base.GridBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridBase</span></code></a> class. This guide
+describes how to create new grid subclasses by implementing a small number of well-defined hooks.</p>
+<section id="structure-of-grid-classes">
+<h2>Structure of Grid Classes<a class="headerlink" href="#structure-of-grid-classes" title="Link to this heading">#</a></h2>
+<p>All concrete grids must inherit from <a class="reference internal" href="../../_as_gen/grids.base.GridBase.html#grids.base.GridBase" title="grids.base.GridBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridBase</span></code></a>, an abstract base class defining the public API for all grids.</p>
+<p>This base class is responsible for:</p>
+<ul class="simple">
+<li><p>Binding to a coordinate system (<code class="xref py py-class docutils literal notranslate"><span class="pre">coordinates.base._CoordinateSystemBase</span></code>)</p></li>
+<li><p>Tracking domain geometry, ghost zones, and chunking</p></li>
+<li><p>Providing a uniform interface for grid operations (e.g., coordinate extraction, subgrids)</p></li>
+<li><p>Supporting file serialization and deserialization via IO mixins</p></li>
+</ul>
+<section id="initialization-methods">
+<h3>Initialization Methods<a class="headerlink" href="#initialization-methods" title="Link to this heading">#</a></h3>
+<p>To define a custom grid class, users override three (optionally 4) core setup routines:</p>
+<ol class="arabic simple">
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">__configure_coordinate_system__()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">__configure_domain__()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">__configure_boundary__()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">__post_init__()</span></code> (optional)</p></li>
+</ol>
+<p>Each method is responsible for configuring a specific aspect of the grid.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">__configure_coordinate_system__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coordinate_system</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="o">...</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Assign the coordinate system to the grid.</span>
+
+<span class="sd">    This method is called during grid initialization to associate a coordinate system</span>
+<span class="sd">    with the grid instance. Subclasses may override this to enforce validation logic,</span>
+<span class="sd">    such as checking whether the coordinate system is orthogonal, curvilinear, or matches</span>
+<span class="sd">    expected dimensionality.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    coordinate_system : _CoordinateSystemBase</span>
+<span class="sd">        The coordinate system to assign to the grid. This must be an instance of a subclass</span>
+<span class="sd">        of `CoordinateSystemBase`, such as `OrthogonalCoordinateSystem` or</span>
+<span class="sd">        `CurvilinearCoordinateSystem`.</span>
+
+<span class="sd">    *args, **kwargs</span>
+<span class="sd">        Additional arguments are accepted for interface compatibility and may be used by subclasses.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    GridInitializationError</span>
+<span class="sd">        If the coordinate system is invalid or incompatible with the grid type.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__cs__</span><span class="p">:</span> <span class="s2">&quot;_CoordinateSystemBase&quot;</span> <span class="o">=</span> <span class="n">coordinate_system</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">__configure_domain__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Configure the shape, resolution, and physical extent of the grid domain.</span>
+
+<span class="sd">    This method is called during initialization to define the core geometric properties</span>
+<span class="sd">    of the grid. Subclasses must implement this method to populate the following attributes:</span>
+
+<span class="sd">    - ``self.__center__``: Whether the grid is cell centered or grid centered.</span>
+<span class="sd">    - ``self.__bbox__``: A `(2, ndim)` array specifying the physical bounding box</span>
+<span class="sd">      of the active domain (excluding ghost zones).</span>
+<span class="sd">    - ``self.__dd__``: A `DomainDimensions` instance specifying the number of grid points</span>
+<span class="sd">      along each axis (excluding ghost zones).</span>
+<span class="sd">    - ``self.__chunking__``: A boolean flag indicating whether chunking is enabled.</span>
+<span class="sd">    - ``self.__chunk_size__``: A `DomainDimensions` object specifying the size of each chunk.</span>
+<span class="sd">    - ``self.__cdd__``: A `DomainDimensions` object giving the number of chunks per axis.</span>
+
+<span class="sd">    If chunking is not enabled, the chunking-related attributes should be set to `False` or `None`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    *args, **kwargs</span>
+<span class="sd">        Subclass-specific arguments such as coordinate arrays, shape, resolution, bounding box, etc.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    GridInitializationError</span>
+<span class="sd">        If the domain cannot be configured due to invalid shapes, resolution mismatch,</span>
+<span class="sd">        or chunking inconsistencies.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__center__</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;vertex&quot;</span><span class="p">,</span> <span class="s2">&quot;cell&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__bbox__</span><span class="p">:</span> <span class="n">BoundingBox</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__dd__</span><span class="p">:</span> <span class="n">DomainDimensions</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__chunking__</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__chunk_size__</span><span class="p">:</span> <span class="n">DomainDimensions</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__cdd__</span><span class="p">:</span> <span class="n">DomainDimensions</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">__configure_boundary__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Configure ghost zones and boundary-related metadata for the grid.</span>
+
+<span class="sd">    This method is called during initialization to set up boundary padding for</span>
+<span class="sd">    stencil operations, boundary conditions, and ghost cell management.</span>
+
+<span class="sd">    Subclasses must populate the following attributes:</span>
+
+<span class="sd">    - ``self.__ghost_zones__``: A `(2, ndim)` array specifying the number of ghost cells</span>
+<span class="sd">      on the lower and upper sides of each axis.</span>
+<span class="sd">    - ``self.__ghost_bbox__``: A `(2, ndim)` array defining the bounding box that includes</span>
+<span class="sd">      ghost regions.</span>
+<span class="sd">    - ``self.__ghost_dd__``: A `DomainDimensions` instance representing the shape of the grid</span>
+<span class="sd">      including ghost cells.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    *args, **kwargs</span>
+<span class="sd">        Subclass-specific arguments used to configure boundary padding (e.g., ghost zone sizes).</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This method is typically called after the domain is configured, so that ghost cells</span>
+<span class="sd">    can be appended to a valid domain geometry.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    GridInitializationError</span>
+<span class="sd">        If ghost zone configuration fails due to shape mismatch or invalid layout.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__ghost_zones__</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__ghost_bbox__</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__ghost_dd__</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>These methods are called in order by the <code class="xref py py-meth docutils literal notranslate"><span class="pre">GridBase.__init__()</span></code> constructor and should assign specific internal attributes as
+described in the corresponding docstrings.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>These exact methods are written for <a class="reference internal" href="../../_as_gen/grids.core.GenericGrid.html#grids.core.GenericGrid" title="grids.core.GenericGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">GenericGrid</span></code></a> and <a class="reference internal" href="../../_as_gen/grids.core.UniformGrid.html#grids.core.UniformGrid" title="grids.core.UniformGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">UniformGrid</span></code></a>, which
+can provide a good starting point for implementing custom grids.</p>
+</div>
+<p>Any additional setup necessary may be done during the <code class="docutils literal notranslate"><span class="pre">.__post_init__</span></code> method.</p>
+</section>
+<section id="io-support-methods">
+<h3>IO Support Methods<a class="headerlink" href="#io-support-methods" title="Link to this heading">#</a></h3>
+<p>Two required methods (<a class="reference internal" href="../../_as_gen/grids.base.GridBase.to_metadata_dict.html#grids.base.GridBase.to_metadata_dict" title="grids.base.GridBase.to_metadata_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_metadata_dict()</span></code></a> and <a class="reference internal" href="../../_as_gen/grids.base.GridBase.from_metadata_dict.html#grids.base.GridBase.from_metadata_dict" title="grids.base.GridBase.from_metadata_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_metadata_dict()</span></code></a>)
+define the serialization protocol used to save and restore grid configurations.</p>
+<p>These methods form the <em>core metadata exchange format</em> for all PyMetric grids and are used as the internal backbone
+for JSON, YAML, and HDF5 persistence via the <code class="xref py py-class docutils literal notranslate"><span class="pre">GridIOMixin</span></code>.</p>
+<ol class="arabic">
+<li><p><a class="reference internal" href="../../_as_gen/grids.base.GridBase.to_metadata_dict.html#grids.base.GridBase.to_metadata_dict" title="grids.base.GridBase.to_metadata_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_metadata_dict()</span></code></a></p>
+<p>Returns a JSON-compatible dictionary containing the grid’s configuration metadata. This dictionary must include
+all the information needed to reconstruct the grid <strong>except</strong> for the coordinate system, which is supplied
+externally when loading.</p>
+<p>Required fields typically include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bbox</span></code>: A list of two lists representing the lower and upper corners of the grid bounding box.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dd</span></code>: The number of grid points per axis (excluding ghost zones).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ghost_zones</span></code>: A 2 × ndim array giving ghost cell counts on lower and upper edges of each axis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">center</span></code>: Either <code class="docutils literal notranslate"><span class="pre">&quot;cell&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;vertex&quot;</span></code>, indicating grid centering.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chunking</span></code>: Boolean flag indicating whether chunking is enabled.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chunk_size</span></code>: (optional) List of per-axis chunk sizes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cdd</span></code>: (optional) Number of chunks per axis.</p></li>
+</ul>
+<p>This method must raise an exception if serialization fails due to missing internal state or invalid configuration.</p>
+</li>
+<li><p><a class="reference internal" href="../../_as_gen/grids.base.GridBase.from_metadata_dict.html#grids.base.GridBase.from_metadata_dict" title="grids.base.GridBase.from_metadata_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_metadata_dict()</span></code></a></p>
+<p>Reconstructs a new grid instance from metadata and a coordinate system.</p>
+<p>This method:</p>
+<ul class="simple">
+<li><p>Must validate all required fields in the metadata dictionary.</p></li>
+<li><p>Must not infer or reconstruct the coordinate system — it must be passed as an argument.</p></li>
+<li><p>May accept additional optional metadata fields for subclass-specific behavior.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cs</span> <span class="o">=</span> <span class="n">OrthogonalCoordinateSystem</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;grid.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">MyGrid</span><span class="o">.</span><span class="n">from_metadata_dict</span><span class="p">(</span><span class="n">cs</span><span class="p">,</span> <span class="n">metadata</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="mixin-classes">
+<h2>Mixin Classes<a class="headerlink" href="#mixin-classes" title="Link to this heading">#</a></h2>
+<p>The <a class="reference internal" href="../../_as_gen/grids.base.GridBase.html#grids.base.GridBase" title="grids.base.GridBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridBase</span></code></a> class in PyMetric is built using a composable, mixin-driven architecture.
+This design enables separation of concerns and allows different behaviors (I/O, plotting, chunking, etc.)
+to be modular, testable, and easily overridden or extended.</p>
+<p>Mixin classes are grouped by functionality and live in submodules of the <a class="reference internal" href="../../_as_gen/grids.html#module-grids" title="grids"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grids</span></code></a> package. They are inherited by
+all concrete grid classes through <code class="xref py py-class docutils literal notranslate"><span class="pre">GridBase</span></code>, providing a unified API without bloating the base logic.</p>
+<p>Each mixin class defines a narrow set of related capabilities and can be found in one of the following submodules:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>grids/
+├── base.py              ← defines GridBase
+├── core.py              ← concrete grid implementations (GenericGrid, UniformGrid)
+├── mixins/
+│   ├── _typing.py        ← type annotations for mixins
+│   ├── core.py          ← core mixins (GridUtilsMixin, GridIOMixin)
+|   │   ├── GridUtilsMixin  ← general-purpose utilities for grids
+│   │   ├── GridIOMixin     ← file I/O support for grids
+│   |   ├── GridPlotMixin    ← plotting support for grids
+│   |
+│   ├── chunking.py      ← chunking mixins (GridChunkingMixin)
+│   |   ├── GridChunkingMixin  ← chunking and partitioning behavior
+│   |
+│   ├── mathops.py       ← dense math operations (DenseMathOpsMixin)
+│   |   ├── DenseMathOpsMixin       ← dense coordinate-space math operations
+</pre></div>
+</div>
+<p>Each mixin class is responsible for a well-scoped set of behaviors. Below is a summary of their
+responsibilities, references to their API documentation, and guidance on how and when to extend or override them.</p>
+<section id="core-mixins">
+<h3>Core Mixins<a class="headerlink" href="#core-mixins" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><a class="reference internal" href="../../_as_gen/grids.mixins.core.GridUtilsMixin.html#grids.mixins.core.GridUtilsMixin" title="grids.mixins.core.GridUtilsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridUtilsMixin</span></code></a>
+(Defined in <code class="docutils literal notranslate"><span class="pre">grids/mixins/core.py</span></code>)</p>
+<p>Provides utility methods that support axis name-index resolution, coordinate shape validation, index generation,
+and dimensional consistency checks. This is the primary toolbox for grid structure introspection.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Do include: logic for resolving axes, handling slices, reshaping results, etc.
+Do not include: any I/O, math operations, or plotting code.</p>
+</div>
+</li>
+<li><p><a class="reference internal" href="../../_as_gen/grids.mixins.core.GridIOMixin.html#grids.mixins.core.GridIOMixin" title="grids.mixins.core.GridIOMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridIOMixin</span></code></a>
+(Defined in <code class="docutils literal notranslate"><span class="pre">grids/mixins/core.py</span></code>)</p>
+<p>Implements file I/O methods using the standardized metadata dictionary produced
+by <a class="reference internal" href="../../_as_gen/grids.base.GridBase.to_metadata_dict.html#grids.base.GridBase.to_metadata_dict" title="grids.base.GridBase.to_metadata_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_metadata_dict()</span></code></a>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Do include: logic to write/read metadata files and validate external serialization.
+Do not include: logic specific to in-memory representations or full grid reconstruction; that belongs in
+<a class="reference internal" href="../../_as_gen/grids.base.GridBase.from_metadata_dict.html#grids.base.GridBase.from_metadata_dict" title="grids.base.GridBase.from_metadata_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_metadata_dict()</span></code></a>.</p>
+</div>
+</li>
+<li><p><a class="reference internal" href="../../_as_gen/grids.mixins.core.GridPlotMixin.html#grids.mixins.core.GridPlotMixin" title="grids.mixins.core.GridPlotMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridPlotMixin</span></code></a>
+(Defined in <code class="docutils literal notranslate"><span class="pre">grids/mixins/core.py</span></code>)</p>
+<p>Offers diagnostic plotting methods for visualizing grid layout, ghost zones, chunk partitions,
+and spacing irregularities. Uses Matplotlib by default.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Do include: methods for plotting grid structure, ghost zones, and chunk boundaries.
+Do not include: field-specific visualizations or domain-specific overlays — those should be handled in
+field visualization utilities.</p>
+</div>
+</li>
+</ul>
+</section>
+<section id="chunking-mixin">
+<h3>Chunking Mixin<a class="headerlink" href="#chunking-mixin" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><a class="reference internal" href="../../_as_gen/grids.mixins.chunking.GridChunkingMixin.html#grids.mixins.chunking.GridChunkingMixin" title="grids.mixins.chunking.GridChunkingMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridChunkingMixin</span></code></a>
+(Defined in <code class="docutils literal notranslate"><span class="pre">grids/mixins/chunking.py</span></code>)</p>
+<p>Handles logic for breaking up grids into regular subdomains (chunks). Exposes chunk-aware subgrid extraction,
+validation of chunk shapes, and halo/ghost zone expansion utilities.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Do include: methods for chunk validation, extraction of subgrids, and chunk metadata.
+Do not include: ghost zone configuration or boundary conditions — those are handled in
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">__configure_boundary__()</span></code>.</p>
+</div>
+</li>
+</ul>
+</section>
+<section id="math-operations-mixin">
+<h3>Math Operations Mixin<a class="headerlink" href="#math-operations-mixin" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><a class="reference internal" href="../../_as_gen/grids.mixins.mathops.DenseMathOpsMixin.html#grids.mixins.mathops.DenseMathOpsMixin" title="grids.mixins.mathops.DenseMathOpsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DenseMathOpsMixin</span></code></a>
+(Defined in <code class="docutils literal notranslate"><span class="pre">grids/mixins/mathops.py</span></code>)</p>
+<p>Implements NumPy-based differential geometry operations (e.g., gradient, divergence, Laplacian) using coordinate-space
+finite difference stencils. Interfaces with dense coordinate arrays.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Do include: methods that perform math over grid-aligned data.
+Do not include: symbolic geometry or coordinate system math — that belongs in the coordinate system or symbolic geometry modules.</p>
+</div>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Geometric Grids: General Info</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../fields/overview.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fields: Overview</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-grid-classes">Structure of Grid Classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialization-methods">Initialization Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#io-support-methods">IO Support Methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixin-classes">Mixin Classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-mixins">Core Mixins</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chunking-mixin">Chunking Mixin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-operations-mixin">Math Operations Mixin</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/reference/grids/build_custom_grids.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Eliza Diggins.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

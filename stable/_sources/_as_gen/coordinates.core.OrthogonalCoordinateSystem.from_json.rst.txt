@@ -1,0 +1,6 @@
+coordinates.core.OrthogonalCoordinateSystem.from\_json
+======================================================
+
+.. currentmodule:: coordinates.core
+
+.. automethod:: OrthogonalCoordinateSystem.from_json

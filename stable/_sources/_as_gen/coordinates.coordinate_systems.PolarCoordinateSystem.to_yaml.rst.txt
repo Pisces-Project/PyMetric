@@ -1,0 +1,6 @@
+coordinates.coordinate\_systems.PolarCoordinateSystem.to\_yaml
+==============================================================
+
+.. currentmodule:: coordinates.coordinate_systems
+
+.. automethod:: PolarCoordinateSystem.to_yaml

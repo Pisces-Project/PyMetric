@@ -1,0 +1,6 @@
+grids.base.GridBase.to\_metadata\_dict
+======================================
+
+.. currentmodule:: grids.base
+
+.. automethod:: GridBase.to_metadata_dict

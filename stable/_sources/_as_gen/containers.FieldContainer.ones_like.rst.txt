@@ -1,0 +1,6 @@
+containers.FieldContainer.ones\_like
+====================================
+
+.. currentmodule:: containers
+
+.. automethod:: FieldContainer.ones_like

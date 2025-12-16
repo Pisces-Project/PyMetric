@@ -1,0 +1,6 @@
+grids.mixins.core.GridIOMixin.to\_json
+======================================
+
+.. currentmodule:: grids.mixins.core
+
+.. automethod:: GridIOMixin.to_json

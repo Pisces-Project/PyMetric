@@ -1,0 +1,6 @@
+containers.FieldContainer.\_\_init\_\_
+======================================
+
+.. currentmodule:: containers
+
+.. automethod:: FieldContainer.__init__

@@ -1,0 +1,1426 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pymetric.fields.buffers.base &#8212; PyMetric  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pymetric/fields/buffers/base';</script>
+    <link rel="icon" href="../../../../_static/pm_favicon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">PyMetric  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../auto_quickstart/index.html">
+    PyMetric Quickstart Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../auto_examples/index.html">
+    Example Gallery
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/index.html">
+    PyMetric User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../api_base.html">
+    API
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../auto_quickstart/index.html">
+    PyMetric Quickstart Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../auto_examples/index.html">
+    Example Gallery
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/index.html">
+    PyMetric User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../api_base.html">
+    API
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pymetric.fields.buffers.base</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pymetric.fields.buffers.base</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Buffer base classes and buffer resolution support.</span>
+
+<span class="sd">This module defines the core :py:class:`BufferBase` class, which all buffer types must subclass,</span>
+<span class="sd">and the metaclass :class:`_BufferMeta`, which manages registration into the</span>
+<span class="sd">default buffer registry and enforces interface correctness.</span>
+
+<span class="sd">The buffer system abstracts different data storage backends (NumPy, HDF5, etc.)</span>
+<span class="sd">behind a common interface so that field operations can delegate storage concerns. Novel buffer</span>
+<span class="sd">classes can be implemented with relative ease vis-a-vis subclasses of :py:class:`BufferBase`.</span>
+
+<span class="sd">For a detailed overview of the buffer system, see :ref:`buffers`.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Type</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">numpy.typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArrayLike</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymetric.fields.mixins._generic</span><span class="w"> </span><span class="kn">import</span> <span class="n">NumpyArithmeticMixin</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">__DEFAULT_BUFFER_REGISTRY__</span><span class="p">,</span> <span class="n">BufferRegistry</span>
+
+
+<span class="c1"># ========================================= #</span>
+<span class="c1"># Buffer Meta Class                         #</span>
+<span class="c1"># ========================================= #</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">_BufferMeta</span><span class="p">(</span><span class="n">ABCMeta</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Metaclass to automatically register newly created buffer classes in</span>
+<span class="sd">    the default registry so that they are available for buffer resolution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__new__</span><span class="p">(</span><span class="n">mcls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">namespace</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># Create the generic superclass as normal. We will</span>
+        <span class="c1"># make alterations to the class object after it is created.</span>
+        <span class="bp">cls</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="n">mcls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">namespace</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Extract the class flags and use them to determine the triaging</span>
+        <span class="c1"># behavior.</span>
+        <span class="n">is_abstract</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s2">&quot;__is_abc__&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">is_abstract</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">cls</span>
+
+        <span class="c1"># Determine the compatible array types so that they can</span>
+        <span class="c1"># be registered and used for resolution.</span>
+        <span class="n">compatible_classes</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span>
+            <span class="bp">cls</span><span class="p">,</span> <span class="s2">&quot;__buffer_resolution_compatible_classes__&quot;</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">compatible_classes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Concrete buffer subclass &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; must define &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;`__buffer_resolution_compatible_classes__` (a type or iterable of types).&quot;</span>
+            <span class="p">)</span>
+
+        <span class="bp">cls</span><span class="o">.</span><span class="n">__buffer_resolution_compatible_classes__</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">compatible_classes</span><span class="p">)</span>
+
+        <span class="c1"># Now register the class in the default buffer.</span>
+        <span class="n">__DEFAULT_BUFFER_REGISTRY__</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span>
+
+
+<span class="c1"># ========================================= #</span>
+<span class="c1"># Abstract Base Class (BufferBase)          #</span>
+<span class="c1"># ========================================= #</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">BufferBase</span><span class="p">(</span><span class="n">NumpyArithmeticMixin</span><span class="p">,</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">_BufferMeta</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Abstract base class for PyMetric-compatible field buffers.</span>
+
+<span class="sd">    All field data in PyMetric is stored using concrete subclasses of `BufferBase`, which provide</span>
+<span class="sd">    a uniform, backend-agnostic interface for array access, transformation, and participation in</span>
+<span class="sd">    numerical operations. This abstraction allows PyMetric to operate seamlessly over a variety of</span>
+<span class="sd">    storage backends, including:</span>
+
+<span class="sd">    - In-memory arrays via :class:`~fields.buffers.core.ArrayBuffer`</span>
+<span class="sd">    - On-disk storage via :class:`~fields.buffers.core.HDF5Buffer` or similar implementations</span>
+
+<span class="sd">    Subclasses of :class:`BufferBase` must implement the full buffer API protocol as documented in</span>
+<span class="sd">    the reference section: :ref:`buffers`. This includes:</span>
+
+<span class="sd">    - NumPy-style indexing via `__getitem__` and `__setitem__`</span>
+<span class="sd">    - Array attributes such as `.shape`, `.dtype`, `.ndim`, and `.size`</span>
+<span class="sd">    - NumPy ufunc participation via `__array_ufunc__`</span>
+<span class="sd">    - Fallbacks for `__array_function__`, which must materialize a NumPy array</span>
+
+<span class="sd">    All field constructors and numerical operators in PyMetric internally operate on :class:`BufferBase` instances.</span>
+<span class="sd">    User-provided arrays (such as raw `np.ndarray`) will be automatically wrapped into</span>
+<span class="sd">    the appropriate buffer subclass at runtime using the buffer resolution mechanism.</span>
+
+<span class="sd">    Subclasses are encouraged to document any backend-specific limitations (e.g., restricted indexing behavior</span>
+<span class="sd">    in HDF5 datasets), and must raise appropriate exceptions (e.g., `NotImplementedError`) when features</span>
+<span class="sd">    are unavailable.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    :ref:`buffers` The PyMetric buffer specification.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># Class Flags                         #</span>
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># These flags are class level markers indicating the behavior</span>
+    <span class="c1"># of the class. They should be configured in subclasses.</span>
+    <span class="n">__is_abc__</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Flag indicating whether this class is abstract and should be excluded from buffer registry resolution.</span>
+
+<span class="sd">    Set this to ``True`` in base classes or abstract buffer prototypes that define interface logic</span>
+<span class="sd">    but are not meant to be directly instantiated or selected during automatic resolution.</span>
+
+<span class="sd">    Concrete buffer implementations **must** override this with ``False`` to be discoverable by</span>
+<span class="sd">    :class:`~fields.buffers.registry.BufferRegistry` and participate in buffer dispatch.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">__buffer_resolution_priority__</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Integer value used to rank buffer classes during automatic backend resolution.</span>
+
+<span class="sd">    When multiple buffer types report compatibility with the same object,</span>
+<span class="sd">    the resolution system selects the one with the **highest priority value**.</span>
+
+<span class="sd">    This enables preference for more specialized buffers (e.g., disk-backed)</span>
+<span class="sd">    over fallback types like raw NumPy arrays.</span>
+
+<span class="sd">    Defaults to 0; subclasses should assign higher values based on specificity or performance.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    :class:`~fields.buffers.registry.BufferRegistry`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">__buffer_resolution_compatible_classes__</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Type</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    List of Python types that this buffer class can directly recognize and wrap.</span>
+
+<span class="sd">    Each entry in this list should be a type (e.g., ``numpy.ndarray``, ``h5py.Dataset``).</span>
+<span class="sd">    These types will be checked against inputs during automatic resolution by the</span>
+<span class="sd">    :class:`~fields.buffers.registry.BufferRegistry`.</span>
+
+<span class="sd">    This attribute **must be defined** for a buffer to be registered and resolved automatically.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">__array_function_dispatch__</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Callable</span><span class="p">,</span> <span class="n">Callable</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mapping of high-level NumPy functions to custom handler implementations for this buffer type.</span>
+
+<span class="sd">    This dictionary allows buffers to override behavior for specific NumPy functions</span>
+<span class="sd">    (e.g., ``np.sum``, ``np.moveaxis``) when using the ``__array_function__`` protocol.</span>
+
+<span class="sd">    Each key should be a NumPy function, and each value should be a callable that implements</span>
+<span class="sd">    custom logic. These handlers receive unwrapped core arrays (via ``as_core()``) and are</span>
+<span class="sd">    responsible for returning the appropriate result (buffer or array).</span>
+
+<span class="sd">    If a NumPy function is not listed here, it will fall back to default delegation logic.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    :meth:`~fields.buffers.base.BufferBase.__array_function__`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__array_priority__</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The priority of the component class in numpy operations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># Initialization Methods              #</span>
+    <span class="c1"># =================================== #</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">array_object</span><span class="p">:</span> <span class="n">ArrayLike</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize a buffer from a validated array-like object.</span>
+
+<span class="sd">        This constructor assumes that the input is already fully compatible with the</span>
+<span class="sd">        expected core array type for this buffer class (e.g., :py:class:`numpy.ndarray`, :py:class:`unyt.unyt_array`, etc.).</span>
+<span class="sd">        No validation or coercion of the data is performed beyond checking its type.</span>
+
+<span class="sd">        .. warning::</span>
+
+<span class="sd">            This method does **not** attempt to coerce or sanitize the input array.</span>
+<span class="sd">            If you pass an incompatible or incorrect array-like object, a ``TypeError``</span>
+<span class="sd">            will be raised. For flexible or user-facing buffer construction, use</span>
+<span class="sd">            :meth:`from_array` or :meth:`coerce` instead.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        array_object : ArrayLike</span>
+<span class="sd">            A pre-validated, backend-specific array object that will be wrapped</span>
+<span class="sd">            by this buffer.</span>
+<span class="sd">        *args, **kwargs:</span>
+<span class="sd">            Additional positional and keyword arguments. These are not used in the base</span>
+<span class="sd">            class but may be relevant for subclasses that require additional initialization.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        TypeError</span>
+<span class="sd">            If the array does not match the expected core type(s).</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        BufferBase.from_array : Preferred interface for safe buffer construction.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="p">:</span> <span class="n">ArrayLike</span> <span class="o">=</span> <span class="n">array_object</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__validate_array_object__</span><span class="p">()</span>
+
+    <span class="c1"># noinspection PyMethodMayBeStatic</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__validate_array_object__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check that the provided underlying array object</span>
+<span class="sd">        is a valid choice. By default, this check is automatically passed; however,</span>
+<span class="sd">        it may be specified in subclasses to provide custom checks.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># Dunder Methods and Numpy Support    #</span>
+    <span class="c1"># =================================== #</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__array__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__array_ufunc__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ufunc</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="o">*</span><span class="n">inputs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Forward semantics for numpy operations on arrays.</span>
+
+<span class="sd">        The heuristic of buffer numpy interaction is that we perform the operations</span>
+<span class="sd">        between numpy representations of the arrays. Our returned value</span>
+<span class="sd">        is determined by the `RepresentationType`s of each of the input buffers.</span>
+
+<span class="sd">        If `out` is specified, then an attempt is made to place the result into the relevant</span>
+<span class="sd">        buffer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Convert all of the inputs into their corresponding representation type. This</span>
+        <span class="c1"># will break any lazy-loading behavior in the inputs and convert everything to</span>
+        <span class="c1"># numpy compatible types.</span>
+        <span class="n">core_inputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">]</span>
+
+        <span class="c1"># Handle `out`: We fetch the out kwarg, check if it is a buffer type, and then</span>
+        <span class="c1"># attempt to place the result into the buffer by specifying out=self.__array_object__.</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;out&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">out</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Normalize to a tuple for uniform processing</span>
+            <span class="n">is_tuple</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span>
+            <span class="n">out_tuple</span> <span class="o">=</span> <span class="n">out</span> <span class="k">if</span> <span class="n">is_tuple</span> <span class="k">else</span> <span class="p">(</span><span class="n">out</span><span class="p">,)</span>
+
+            <span class="c1"># Unwrap buffers</span>
+            <span class="n">unwrapped_out</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+                <span class="n">o</span><span class="o">.</span><span class="n">as_core</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span> <span class="k">else</span> <span class="n">o</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">out_tuple</span>
+            <span class="p">)</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;out&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">unwrapped_out</span> <span class="k">if</span> <span class="n">is_tuple</span> <span class="k">else</span> <span class="n">unwrapped_out</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="c1"># Apply the ufunc</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">ufunc</span><span class="p">,</span> <span class="n">method</span><span class="p">)(</span><span class="o">*</span><span class="n">core_inputs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+            <span class="c1"># Pass result through based on the typing.</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">out_tuple</span>
+            <span class="k">elif</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">out_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># out was not specified, we simply return the unwrapped behavior.</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">ufunc</span><span class="p">,</span> <span class="n">method</span><span class="p">)(</span><span class="o">*</span><span class="n">core_inputs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__array_function__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">types</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Override NumPy high-level functions for BufferBase.</span>
+
+<span class="sd">        The heuristic for this behavior is to simply delegate operations to</span>
+<span class="sd">        the buffer representation unless there is a specific override in place.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check for custom forwarding implementations via</span>
+        <span class="c1"># the __array_functions_dispatch__.</span>
+        <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">types</span><span class="p">):</span>
+            <span class="c1"># Fetch the dispatch and check for the override of</span>
+            <span class="c1"># this function.</span>
+            <span class="n">redirect_func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;__array_function_dispatch__&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                <span class="n">func</span><span class="p">,</span> <span class="kc">None</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">redirect_func</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="c1"># We have a redirection, we now delegate to that.</span>
+                <span class="k">return</span> <span class="n">redirect_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># No valid dispatch found. We now strip the args down and</span>
+        <span class="c1"># pass through without and further alterations.</span>
+        <span class="n">unwrapped_args</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+            <span class="n">a</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span> <span class="k">else</span> <span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span>
+        <span class="p">)</span>
+        <span class="n">unwrapped_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">_k</span><span class="p">:</span> <span class="n">_v</span><span class="o">.</span><span class="n">as_core</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_v</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span> <span class="k">else</span> <span class="n">_v</span>
+            <span class="k">for</span> <span class="n">_k</span><span class="p">,</span> <span class="n">_v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">unwrapped_args</span><span class="p">,</span> <span class="o">**</span><span class="n">unwrapped_kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(shape=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">, dtype=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the length of the buffer along its first axis.</span>
+
+<span class="sd">        This is equivalent to `len(buffer.as_core())`, and will raise an error</span>
+<span class="sd">        if the buffer has zero dimensions.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        int</span>
+<span class="sd">            The size of the first dimension.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        TypeError</span>
+<span class="sd">            If the buffer is scalar (zero-dimensional).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return an iterator over the outermost dimension of the buffer.</span>
+
+<span class="sd">        This allows iteration like `for row in buffer`, where each row is returned</span>
+<span class="sd">        as a slice of the buffer. Slices are returned as NumPy arrays or `unyt_array`,</span>
+<span class="sd">        depending on the underlying backend.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Iterator[Any]</span>
+<span class="sd">            An iterator over the first dimension of the wrapped array.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check for equality with another buffer or array-like object.</span>
+
+<span class="sd">        This uses NumPy-style broadcasting and comparison. If `other` is not a buffer,</span>
+<span class="sd">        it will be coerced to an array for comparison. This performs an *element-wise*</span>
+<span class="sd">        comparison and returns a boolean scalar only if the entire contents are equal.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other : Any</span>
+<span class="sd">            Another buffer or array-like object.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            True if the contents are equal (element-wise). False otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_core</span><span class="p">()</span> <span class="o">==</span> <span class="n">other</span>
+
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># Generator Methods                   #</span>
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># These methods control the generation of buffer subclasses.</span>
+    <span class="nd">@classmethod</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_array</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;BufferBase&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Attempt to construct a new buffer instance from an array-like object.</span>
+
+<span class="sd">        This method is the canonical entry point for converting arbitrary array-like</span>
+<span class="sd">        inputs into a buffer of this type. It behaves similarly to a cast operation,</span>
+<span class="sd">        and will coerce the input as needed to match the expected backend format</span>
+<span class="sd">        (e.g., :class:`~numpy.ndarray`, class:`~unyt.unyt_array`, etc.).</span>
+
+<span class="sd">        The method should be overridden in subclasses to handle type conversion, memory layout,</span>
+<span class="sd">        or any other backend-specific behavior.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        obj : array-like</span>
+<span class="sd">            Input data to be wrapped. This can be any object that is compatible with</span>
+<span class="sd">            the backend&#39;s array casting rules—such as lists, tuples,</span>
+<span class="sd">            NumPy arrays, unyt arrays, or backend-native types (e.g., HDF5 datasets).</span>
+<span class="sd">            The input will be coerced into a backend-compatible array before being</span>
+<span class="sd">            wrapped in a buffer instance. If coercion fails, a `TypeError` will be raised.</span>
+<span class="sd">        dtype : data-type, optional</span>
+<span class="sd">            Desired data type of the resulting array. If not specified, the type is</span>
+<span class="sd">            inferred from `obj`.</span>
+<span class="sd">        *args, **kwargs :</span>
+<span class="sd">            Additional arguments to customize the construction. These may include:</span>
+
+<span class="sd">            - `order`, `copy`, or `device` for backend-specific configuration</span>
+<span class="sd">            - Any arguments accepted by the backend constructor</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        BufferBase</span>
+<span class="sd">            A new buffer instance wrapping the coerced array.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        TypeError</span>
+<span class="sd">            If the input cannot be coerced into a valid array for this backend.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zeros</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;BufferBase&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new buffer filled with zeros.</span>
+
+<span class="sd">        This method constructs a new backend-specific array of the given shape,</span>
+<span class="sd">        filled with zeros, and wraps it in a buffer instance.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        shape : tuple of int</span>
+<span class="sd">            The desired shape of the buffer, including both grid and element dimensions.</span>
+
+<span class="sd">        *args :</span>
+<span class="sd">            Positional arguments passed through to the array constructor (backend-specific).</span>
+
+<span class="sd">        **kwargs :</span>
+<span class="sd">            Additional keyword arguments passed to the array constructor. May include:</span>
+
+<span class="sd">            - ``dtype``: Data type of the array (e.g., ``float32``, ``int64``)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        BufferBase</span>
+<span class="sd">            A buffer instance wrapping a zero-initialized array.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">empty</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;BufferBase&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new buffer with a window into unaltered memory.</span>
+
+<span class="sd">        This method constructs a new backend-specific array of the given shape, and wraps it in a buffer instance.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        shape : tuple of int</span>
+<span class="sd">            The desired shape of the buffer, including both grid and element dimensions.</span>
+
+<span class="sd">        *args :</span>
+<span class="sd">            Positional arguments passed through to the array constructor (backend-specific).</span>
+
+<span class="sd">        **kwargs :</span>
+<span class="sd">            Additional keyword arguments passed to the array constructor. May include:</span>
+
+<span class="sd">            - ``dtype``: Data type of the array (e.g., ``float32``, ``int64``)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        BufferBase</span>
+<span class="sd">            A buffer instance wrapping an uninitialized array.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ones</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;BufferBase&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new buffer filled with ones.</span>
+
+<span class="sd">        Constructs a backend-compatible array filled with ones and wraps it</span>
+<span class="sd">        in a buffer instance.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        shape : tuple of int</span>
+<span class="sd">            The desired shape of the buffer, including both grid and element dimensions.</span>
+
+<span class="sd">        *args :</span>
+<span class="sd">            Positional arguments forwarded to the array constructor.</span>
+
+<span class="sd">        **kwargs :</span>
+<span class="sd">            Additional keyword arguments passed to the array constructor. May include:</span>
+
+<span class="sd">            - ``dtype``: Data type of the array (e.g., ``float32``, ``int64``)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        BufferBase</span>
+<span class="sd">            A buffer instance wrapping a one-filled array.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">full</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;BufferBase&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new buffer filled with a constant value.</span>
+
+<span class="sd">        This method builds a backend-specific array of the given shape and fills it</span>
+<span class="sd">        with the provided `fill_value`. The resulting array is wrapped and returned</span>
+<span class="sd">        as a buffer instance.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        shape : tuple of int</span>
+<span class="sd">            The desired shape of the buffer (grid + element dimensions).</span>
+
+<span class="sd">        *args :</span>
+<span class="sd">            Additional positional arguments passed to the backend constructor.</span>
+
+<span class="sd">        fill_value : float, default 0.0</span>
+<span class="sd">            The constant value to use for every element in the array.</span>
+
+<span class="sd">        **kwargs :</span>
+<span class="sd">            Additional keyword arguments passed to the array constructor. May include:</span>
+
+<span class="sd">            - ``dtype``: Data type of the array (e.g., ``float32``, ``int64``)</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        BufferBase</span>
+<span class="sd">            A buffer instance wrapping a constant-filled array.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zeros_like</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;BufferBase&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;BufferBase&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new buffer filled with zeros and matching the shape of another buffer.</span>
+
+<span class="sd">        This method delegates to the class&#39;s `zeros` constructor, using the shape of</span>
+<span class="sd">        the provided buffer instance.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other : BufferBase</span>
+<span class="sd">            The buffer whose shape will be used.</span>
+<span class="sd">        *args :</span>
+<span class="sd">            Additional positional arguments forwarded to `zeros`.</span>
+<span class="sd">        **kwargs :</span>
+<span class="sd">            Additional keyword arguments forwarded to `zeros`. Common options include:</span>
+<span class="sd">            - `dtype` : data type of the buffer</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        BufferBase</span>
+<span class="sd">            A buffer filled with zeros and the same shape as `other`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ones_like</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;BufferBase&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;BufferBase&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new buffer filled with ones and matching the shape of another buffer.</span>
+
+<span class="sd">        This method delegates to the class&#39;s `ones` constructor, using the shape of</span>
+<span class="sd">        the provided buffer instance.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other : BufferBase</span>
+<span class="sd">            The buffer whose shape will be used.</span>
+<span class="sd">        *args :</span>
+<span class="sd">            Additional positional arguments forwarded to `ones`.</span>
+<span class="sd">        **kwargs :</span>
+<span class="sd">            Additional keyword arguments forwarded to `ones`. Common options include:</span>
+<span class="sd">            - `dtype` : data type of the buffer</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        BufferBase</span>
+<span class="sd">            A buffer filled with ones and the same shape as `other`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">full_like</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;BufferBase&quot;</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;BufferBase&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new buffer filled with a constant value and matching the shape of another buffer.</span>
+
+<span class="sd">        This method delegates to the class&#39;s `full` constructor, using the shape of</span>
+<span class="sd">        the provided buffer instance.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other : BufferBase</span>
+<span class="sd">            The buffer whose shape will be used.</span>
+<span class="sd">        fill_value : scalar or quantity, default 0.0</span>
+<span class="sd">            The constant value to fill the buffer with.</span>
+<span class="sd">        *args :</span>
+<span class="sd">            Additional positional arguments forwarded to `full`.</span>
+<span class="sd">        **kwargs :</span>
+<span class="sd">            Additional keyword arguments forwarded to `full`. Common options include:</span>
+<span class="sd">            - `dtype` : data type of the buffer</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        BufferBase</span>
+<span class="sd">            A buffer filled with the specified value and the same shape as `other`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">empty_like</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;BufferBase&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;BufferBase&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new buffer allocation matching the shape of another buffer.</span>
+
+<span class="sd">        This method delegates to the class&#39;s `empty` constructor, using the shape of</span>
+<span class="sd">        the provided buffer instance.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other : BufferBase</span>
+<span class="sd">            The buffer whose shape will be used.</span>
+<span class="sd">        *args :</span>
+<span class="sd">            Additional positional arguments forwarded to `empty`.</span>
+<span class="sd">        **kwargs :</span>
+<span class="sd">            Additional keyword arguments forwarded to `empty`. Common options include:</span>
+<span class="sd">            - `dtype` : data type of the buffer</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        BufferBase</span>
+<span class="sd">            An unallocated buffer like `other`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">as_array</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the buffer as a NumPy array.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        numpy.ndarray</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array__</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">as_core</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayLike</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the raw backend array object stored in this buffer.</span>
+
+<span class="sd">        This method provides direct access to the internal array-like object</span>
+<span class="sd">        (e.g., :py:class:`numpy.ndarray`, :py:class:`unyt.unyt_array`, or :py:class:`h5py.Dataset`) without any conversion</span>
+<span class="sd">        or wrapping. It is useful for advanced users who need to access backend-specific</span>
+<span class="sd">        methods or metadata not exposed through the generic buffer interface.</span>
+
+<span class="sd">        Unlike :meth:`as_array`, this method returns the native format of the</span>
+<span class="sd">        underlying backend, preserving special structures or lazy behavior if applicable.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ArrayLike</span>
+<span class="sd">            The unmodified internal array object stored in the buffer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span>
+
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># Properties                          #</span>
+    <span class="c1"># =================================== #</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Total number of elements.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="o">.</span><span class="n">size</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ndim</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Number of dimensions.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="o">.</span><span class="n">ndim</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">shape</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Shape of the underlying array.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dtype</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Data type of the array.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span><span class="o">.</span><span class="n">dtype</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Shorthand for `as_core()`.</span>
+
+<span class="sd">        This returns the raw backend-specific array (e.g., `np.ndarray`, `unyt_array`, or HDF5 dataset),</span>
+<span class="sd">        without applying any conversions or wrapping. Useful for advanced users who want direct access.</span>
+
+<span class="sd">        Equivalent to: `self.as_core()`</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ArrayLike</span>
+<span class="sd">            The backend-native data structure stored in this buffer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__array_object__</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">T</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Transpose of the array (shortcut for `.transpose()`).</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        numpy.ndarray.T</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># Utility Methods                     #</span>
+    <span class="c1"># =================================== #</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">list_compatible_classes</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the list of compatible types for this buffer class.</span>
+
+<span class="sd">        These are the Python types (e.g., `numpy.ndarray`, `h5py.Dataset`) that this buffer</span>
+<span class="sd">        can accept and wrap directly during resolution. The types are specified by the</span>
+<span class="sd">        class-level attribute `__buffer_resolution_compatible_classes__`.</span>
+
+<span class="sd">        This method is primarily used by the buffer registry to determine whether a buffer</span>
+<span class="sd">        class can handle a given input during automatic resolution.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        list</span>
+<span class="sd">            A shallow copy of the compatible Python types that this buffer can wrap.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__buffer_resolution_compatible_classes__</span><span class="p">[:]</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">can_resolve</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check whether this buffer class can resolve the given object.</span>
+
+<span class="sd">        This method returns True if the type of `obj` matches any of the types listed</span>
+<span class="sd">        in ``__buffer_resolution_compatible_classes__``. It is used internally by the</span>
+<span class="sd">        buffer registry to dispatch input objects to the correct backend.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        obj : Any</span>
+<span class="sd">            The input object to test for compatibility.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            True if `obj` is compatible with this buffer class, False otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">list_compatible_classes</span><span class="p">()</span>
+
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># Numpy-Like Methods                  #</span>
+    <span class="c1"># =================================== #</span>
+    <span class="c1"># These methods are ONLY necessary to support transformations of</span>
+    <span class="c1"># a single buffer in ways which might need to return a buffer directly (i.e. reshaping).</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_cast_numpy_op</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="n">numpy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">bargs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+        <span class="n">bkwargs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Apply a NumPy transformation to this buffer’s array and optionally wrap the result.</span>
+
+<span class="sd">        This method enables concise, consistent support for buffer-returning operations such as</span>
+<span class="sd">        `.reshape()`, `.transpose()`, `.copy()`, etc. When `numpy=True`, the result is returned</span>
+<span class="sd">        as a raw NumPy array. Otherwise, a new buffer of the same class is constructed from the result.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        func : Callable</span>
+<span class="sd">            A function that takes an array and returns a transformed array (e.g., `np.transpose`).</span>
+<span class="sd">        *args :</span>
+<span class="sd">            Positional arguments to pass to `func`.</span>
+<span class="sd">        numpy : bool, optional</span>
+<span class="sd">            If True, return the result as a raw array. If False (default), return as a buffer.</span>
+<span class="sd">        bargs : tuple, optional</span>
+<span class="sd">            Positional arguments to forward to the buffer constructor when `numpy=False`.</span>
+<span class="sd">        bkwargs : dict, optional</span>
+<span class="sd">            Keyword arguments to forward to the buffer constructor when `numpy=False`.</span>
+<span class="sd">        **kwargs :</span>
+<span class="sd">            Additional keyword arguments passed to `func`.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        BufferBase or array-like</span>
+<span class="sd">            Result of applying the transformation, either as a buffer or raw array.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">bkwargs</span> <span class="o">=</span> <span class="n">bkwargs</span> <span class="ow">or</span> <span class="p">{}</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">as_array</span><span class="p">(),</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span> <span class="k">if</span> <span class="n">numpy</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="o">*</span><span class="n">bargs</span><span class="p">,</span> <span class="o">**</span><span class="n">bkwargs</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">astype</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bargs</span><span class="o">=</span><span class="p">(),</span> <span class="n">bkwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Cast to a specified dtype.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        numpy.ndarray.astype</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cast_numpy_op</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">arr</span><span class="p">:</span> <span class="n">arr</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">),</span>
+            <span class="n">numpy</span><span class="o">=</span><span class="n">numpy</span><span class="p">,</span>
+            <span class="n">bargs</span><span class="o">=</span><span class="n">bargs</span><span class="p">,</span>
+            <span class="n">bkwargs</span><span class="o">=</span><span class="n">bkwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">conj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bargs</span><span class="o">=</span><span class="p">(),</span> <span class="n">bkwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the complex conjugate.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        numpy.ndarray.conj</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cast_numpy_op</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span><span class="n">numpy</span><span class="p">,</span> <span class="n">bargs</span><span class="o">=</span><span class="n">bargs</span><span class="p">,</span> <span class="n">bkwargs</span><span class="o">=</span><span class="n">bkwargs</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">conjugate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bargs</span><span class="o">=</span><span class="p">(),</span> <span class="n">bkwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the complex conjugate.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        numpy.ndarray.conjugate</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cast_numpy_op</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">conjugate</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span><span class="n">numpy</span><span class="p">,</span> <span class="n">bargs</span><span class="o">=</span><span class="n">bargs</span><span class="p">,</span> <span class="n">bkwargs</span><span class="o">=</span><span class="n">bkwargs</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bargs</span><span class="o">=</span><span class="p">(),</span> <span class="n">bkwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a copy of the array.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        numpy.ndarray.copy</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cast_numpy_op</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span><span class="n">numpy</span><span class="p">,</span> <span class="n">bargs</span><span class="o">=</span><span class="n">bargs</span><span class="p">,</span> <span class="n">bkwargs</span><span class="o">=</span><span class="n">bkwargs</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">flatten</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bargs</span><span class="o">=</span><span class="p">(),</span> <span class="n">bkwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a flattened copy of the array.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        numpy.ndarray.flatten</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cast_numpy_op</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">arr</span><span class="p">:</span> <span class="n">arr</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">),</span>
+            <span class="n">numpy</span><span class="o">=</span><span class="n">numpy</span><span class="p">,</span>
+            <span class="n">bargs</span><span class="o">=</span><span class="n">bargs</span><span class="p">,</span>
+            <span class="n">bkwargs</span><span class="o">=</span><span class="n">bkwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">ravel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bargs</span><span class="o">=</span><span class="p">(),</span> <span class="n">bkwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a flattened view of the array.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        numpy.ndarray.ravel</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cast_numpy_op</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">arr</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">),</span>
+            <span class="n">numpy</span><span class="o">=</span><span class="n">numpy</span><span class="p">,</span>
+            <span class="n">bargs</span><span class="o">=</span><span class="n">bargs</span><span class="p">,</span>
+            <span class="n">bkwargs</span><span class="o">=</span><span class="n">bkwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">reshape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">shape</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bargs</span><span class="o">=</span><span class="p">(),</span> <span class="n">bkwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a reshaped view or copy of the array.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        numpy.ndarray.reshape</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cast_numpy_op</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">arr</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="o">*</span><span class="n">shape</span><span class="p">),</span>
+            <span class="n">numpy</span><span class="o">=</span><span class="n">numpy</span><span class="p">,</span>
+            <span class="n">bargs</span><span class="o">=</span><span class="n">bargs</span><span class="p">,</span>
+            <span class="n">bkwargs</span><span class="o">=</span><span class="n">bkwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">resize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">shape</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bargs</span><span class="o">=</span><span class="p">(),</span> <span class="n">bkwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Resize the array to a new shape (copy-based emulation of NumPy&#39;s in-place behavior).</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        numpy.ndarray.resize</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cast_numpy_op</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">arr</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="o">*</span><span class="n">shape</span><span class="p">),</span>
+            <span class="n">numpy</span><span class="o">=</span><span class="n">numpy</span><span class="p">,</span>
+            <span class="n">bargs</span><span class="o">=</span><span class="n">bargs</span><span class="p">,</span>
+            <span class="n">bkwargs</span><span class="o">=</span><span class="n">bkwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">swapaxes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis1</span><span class="p">,</span> <span class="n">axis2</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bargs</span><span class="o">=</span><span class="p">(),</span> <span class="n">bkwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Interchange two axes of the array.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        numpy.ndarray.swapaxes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cast_numpy_op</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">arr</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis1</span><span class="p">,</span> <span class="n">axis2</span><span class="p">),</span>
+            <span class="n">numpy</span><span class="o">=</span><span class="n">numpy</span><span class="p">,</span>
+            <span class="n">bargs</span><span class="o">=</span><span class="n">bargs</span><span class="p">,</span>
+            <span class="n">bkwargs</span><span class="o">=</span><span class="n">bkwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">axes</span><span class="p">,</span> <span class="n">numpy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bargs</span><span class="o">=</span><span class="p">(),</span> <span class="n">bkwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permute the dimensions of the array.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        numpy.ndarray.transpose</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cast_numpy_op</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">arr</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axes</span> <span class="k">if</span> <span class="n">axes</span> <span class="k">else</span> <span class="kc">None</span><span class="p">),</span>
+            <span class="n">numpy</span><span class="o">=</span><span class="n">numpy</span><span class="p">,</span>
+            <span class="n">bargs</span><span class="o">=</span><span class="n">bargs</span><span class="p">,</span>
+            <span class="n">bkwargs</span><span class="o">=</span><span class="n">bkwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+
+
+<span class="c1"># ========================================= #</span>
+<span class="c1"># Buffer Resolution Methods                 #</span>
+<span class="c1"># ========================================= #</span>
+<span class="c1"># This is the main entry point for buffer resolution.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">buffer_from_array</span><span class="p">(</span>
+    <span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+    <span class="n">buffer_class</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="s2">&quot;BufferBase&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">buffer_registry</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">&quot;BufferRegistry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;BufferBase&quot;</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Construct a PyMetric-compatible buffer from a raw array-like object.</span>
+
+<span class="sd">    This function serves as the high-level entry point for buffer resolution in PyMetric.</span>
+<span class="sd">    It accepts any array-like input (e.g., NumPy arrays, lists, unyt arrays, or HDF5 datasets)</span>
+<span class="sd">    and returns a fully constructed :class:`~fields.buffers.base.BufferBase` subclass instance</span>
+<span class="sd">    that wraps the data.</span>
+
+<span class="sd">    Resolution behavior is determined as follows:</span>
+
+<span class="sd">    1. If ``buffer_class`` is specified, it bypasses registry logic and directly calls</span>
+<span class="sd">       :meth:`BufferBase.from_array` on that class.</span>
+<span class="sd">    2. If ``buffer_class`` is not specified, the function dispatches to the buffer registry,</span>
+<span class="sd">       which selects a compatible backend based on type compatibility and resolution priority.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    obj : Any</span>
+<span class="sd">        The input array-like object to be wrapped. Can be any supported format, including:</span>
+<span class="sd">        - `list`, `tuple`, `numpy.ndarray`</span>
+<span class="sd">        - `unyt.unyt_array`</span>
+<span class="sd">        - `h5py.Dataset`</span>
+<span class="sd">    buffer_class : Type[BufferBase], optional</span>
+<span class="sd">        An explicit buffer class to use. If provided, registry resolution is skipped.</span>
+<span class="sd">    buffer_registry : BufferRegistry, optional</span>
+<span class="sd">        A custom registry to use for resolution. Defaults to the global</span>
+<span class="sd">        :data:`__DEFAULT_BUFFER_REGISTRY__`.</span>
+<span class="sd">    *args :</span>
+<span class="sd">        Positional arguments forwarded to the resolved buffer&#39;s `from_array()` method.</span>
+<span class="sd">    **kwargs :</span>
+<span class="sd">        Keyword arguments forwarded to `from_array()` (e.g., `dtype`, etc.).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    BufferBase</span>
+<span class="sd">        An instance of a registered buffer type wrapping the input.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    TypeError</span>
+<span class="sd">        If no compatible buffer type can be resolved, or if `buffer_class` is invalid.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; buffer_from_array([1, 2, 3])</span>
+<span class="sd">    ArrayBuffer(shape=(3,), dtype=int64)</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    - This function is backend-agnostic and safe to use in any context where the</span>
+<span class="sd">      precise buffer type is not known in advance.</span>
+<span class="sd">    - If `buffer_class` is provided, registry logic is skipped entirely.</span>
+<span class="sd">    - If `buffer_registry` is not provided, the global default registry is used.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    BufferBase.from_array : Class-specific buffer constructor.</span>
+<span class="sd">    BufferRegistry.resolve : Registry-based resolution logic.</span>
+<span class="sd">    resolve_buffer_class : Utility to normalize buffer class identifiers.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">buffer_class</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">buffer_class</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">buffer_registry</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">pymetric.fields.buffers.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">__DEFAULT_BUFFER_REGISTRY__</span>
+
+        <span class="n">buffer_registry</span> <span class="o">=</span> <span class="n">__DEFAULT_BUFFER_REGISTRY__</span>
+
+    <span class="k">return</span> <span class="n">buffer_registry</span><span class="o">.</span><span class="n">resolve</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Eliza Diggins.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

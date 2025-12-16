@@ -1,0 +1,6 @@
+containers.FieldContainer.empty\_like
+=====================================
+
+.. currentmodule:: containers
+
+.. automethod:: FieldContainer.empty_like

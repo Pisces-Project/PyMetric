@@ -1,0 +1,6 @@
+containers.FieldContainer.has\_field
+====================================
+
+.. currentmodule:: containers
+
+.. automethod:: FieldContainer.has_field

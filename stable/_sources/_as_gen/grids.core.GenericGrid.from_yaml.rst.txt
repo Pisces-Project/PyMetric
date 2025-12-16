@@ -1,0 +1,6 @@
+grids.core.GenericGrid.from\_yaml
+=================================
+
+.. currentmodule:: grids.core
+
+.. automethod:: GenericGrid.from_yaml

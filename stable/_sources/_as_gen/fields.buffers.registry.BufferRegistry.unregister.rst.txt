@@ -1,0 +1,6 @@
+fields.buffers.registry.BufferRegistry.unregister
+=================================================
+
+.. currentmodule:: fields.buffers.registry
+
+.. automethod:: BufferRegistry.unregister

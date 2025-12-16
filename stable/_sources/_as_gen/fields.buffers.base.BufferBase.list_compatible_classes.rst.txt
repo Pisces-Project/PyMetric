@@ -1,0 +1,6 @@
+fields.buffers.base.BufferBase.list\_compatible\_classes
+========================================================
+
+.. currentmodule:: fields.buffers.base
+
+.. automethod:: BufferBase.list_compatible_classes

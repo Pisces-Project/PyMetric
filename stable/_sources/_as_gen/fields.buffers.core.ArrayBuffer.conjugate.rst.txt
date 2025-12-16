@@ -1,0 +1,6 @@
+fields.buffers.core.ArrayBuffer.conjugate
+=========================================
+
+.. currentmodule:: fields.buffers.core
+
+.. automethod:: ArrayBuffer.conjugate

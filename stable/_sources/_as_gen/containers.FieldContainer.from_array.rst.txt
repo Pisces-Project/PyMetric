@@ -1,0 +1,6 @@
+containers.FieldContainer.from\_array
+=====================================
+
+.. currentmodule:: containers
+
+.. automethod:: FieldContainer.from_array

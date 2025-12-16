@@ -1,0 +1,6 @@
+fields.buffers.registry.BufferRegistry.get\_registered\_classes
+===============================================================
+
+.. currentmodule:: fields.buffers.registry
+
+.. automethod:: BufferRegistry.get_registered_classes

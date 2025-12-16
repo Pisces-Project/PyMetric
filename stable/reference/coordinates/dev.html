@@ -1,0 +1,772 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Coordinate Systems: Developer Documentation &#8212; PyMetric  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/coordinates/dev';</script>
+    <link rel="icon" href="../../_static/pm_favicon.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Geometric Grids: Developer Documentation" href="../grids/dev.html" />
+    <link rel="prev" title="Symbolic Tensor Dependence API" href="../differential_geometry/dependence.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">PyMetric  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../auto_quickstart/index.html">
+    PyMetric Quickstart Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../auto_examples/index.html">
+    Example Gallery
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    PyMetric User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api_base.html">
+    API
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../auto_quickstart/index.html">
+    PyMetric Quickstart Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../auto_examples/index.html">
+    Example Gallery
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    PyMetric User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api_base.html">
+    API
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../theory/coordinate_theory.html">Curvilinear Coordinate Systems</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Coordinate Systems: General Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_coordinate_systems.html">Coordinate Systems: Building Custom Coordinate Systems</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../grids/overview.html">Geometric Grids: General Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grids/build_custom_grids.html">Geometric Grids: Custom Grid Classes</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fields/overview.html">Fields: Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fields/numpy.html">Fields: NumPy Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fields/buffers.html">Fields: Data Buffers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fields/components.html">Fields: Field Components</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../differential_geometry/overview.html">Differential Geometry: Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../differential_geometry/dependence.html">Symbolic Tensor Dependence API</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Coordinate Systems: Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grids/dev.html">Geometric Grids: Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fields/dev.html">Fields: Developers</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">PyMetric User Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Coordinate Systems: Developer Documentation</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="coordinate-systems-developer-documentation">
+<span id="coordinates-dev"></span><h1>Coordinate Systems: Developer Documentation<a class="headerlink" href="#coordinate-systems-developer-documentation" title="Link to this heading">#</a></h1>
+<p>This guide is intended for contributors and maintainers working on the coordinate system
+infrastructure in <strong>PyMetric</strong>. Coordinate systems form the geometric backbone of all spatial
+operations in the library, including grid generation, symbolic differential geometry, and
+coordinate-space transformations.</p>
+<p>This document provides:</p>
+<ul class="simple">
+<li><p>An overview of the coordinate system class hierarchy and mixin architecture</p></li>
+<li><p>Guidelines for writing and extending coordinate system classes</p></li>
+<li><p>Documentation on mixins for transformation logic, symbolic math, and I/O</p></li>
+<li><p>Best practices for testing, contribution, and implementation boundaries</p></li>
+</ul>
+<p>It is recommended reading for anyone contributing new coordinate systems or modifying existing ones.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you’re interested in contributing, please submit pull requests or open issues via our GitHub repository:</p>
+<p><a class="reference external" href="https://github.com/Pisces-Project/PyMetric">Pisces-Project/PyMetric</a></p>
+<p>Contributions are welcome in the form of:</p>
+<ul class="simple">
+<li><p>Bug reports and fixes</p></li>
+<li><p>New coordinate systems (e.g., oblate spheroidal, log-polar)</p></li>
+<li><p>Enhancements to symbolic geometry or transformation logic</p></li>
+<li><p>Improvements to documentation and test coverage</p></li>
+</ul>
+<p>For instructions on setting up your development environment, building the documentation,
+and running the test suite, please refer to the <a class="reference internal" href="../../auto_quickstart/index.html#quickstart"><span class="std std-ref">PyMetric Quickstart Guide</span></a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All contributions must follow the internal API and type annotations established in
+<code class="xref py py-mod docutils literal notranslate"><span class="pre">coordinates.mixins._typing</span></code>, which defines the formal interfaces for all coordinate system components.</p>
+</div>
+<section id="coordinate-systems-overview">
+<h2>Coordinate Systems: Overview<a class="headerlink" href="#coordinate-systems-overview" title="Link to this heading">#</a></h2>
+<p>Coordinate systems in PyMetric define the mathematical and geometric structure used by grids,
+differential geometry routines, and physical field representations. All coordinate systems must
+inherit from the abstract protocol defined in <code class="xref py py-class docutils literal notranslate"><span class="pre">_CoordinateSystemBase</span></code>.</p>
+<p>This base class defines the public API and required behaviors for all coordinate system implementations,
+including:</p>
+<ul class="simple">
+<li><p>Axis metadata (names, labels, units)</p></li>
+<li><p>Coordinate transformation interfaces</p></li>
+<li><p>Support for symbolic operations</p></li>
+<li><p>Compatibility with structured grids and field operators</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Coordinate systems do <strong>not</strong> manage data arrays, units, or grid values directly.
+Their role is strictly geometric — they define the <em>shape</em> of space, not the contents of it.</p>
+</div>
+<section id="coordinate-system-hierarchy">
+<h3>Coordinate System Hierarchy<a class="headerlink" href="#coordinate-system-hierarchy" title="Link to this heading">#</a></h3>
+<p>PyMetric supports two main categories of coordinate systems:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../_as_gen/coordinates.core.CurvilinearCoordinateSystem.html#coordinates.core.CurvilinearCoordinateSystem" title="coordinates.core.CurvilinearCoordinateSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">CurvilinearCoordinateSystem</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../_as_gen/coordinates.core.OrthogonalCoordinateSystem.html#coordinates.core.OrthogonalCoordinateSystem" title="coordinates.core.OrthogonalCoordinateSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrthogonalCoordinateSystem</span></code></a></p></li>
+</ul>
+<p>The distinction is as follows:</p>
+<ul class="simple">
+<li><p><strong>CurvilinearCoordinateSystem</strong>: Allows general non-orthogonal metrics, including shearing and angular coupling.
+This class supports arbitrary Riemannian metrics and is the base for symbolic tensor operations.</p></li>
+<li><p><strong>OrthogonalCoordinateSystem</strong>: Specializes the curvilinear case by assuming a diagonal metric tensor.
+These systems are more efficient for symbolic operations and finite difference stencils.</p></li>
+</ul>
+<p>All concrete coordinate systems (e.g., Cartesian, Cylindrical, Spherical) are implemented as subclasses of one of these two.
+They live in the <a class="reference internal" href="../../_as_gen/coordinates.coordinate_systems.html#module-coordinates.coordinate_systems" title="coordinates.coordinate_systems"><code class="xref py py-mod docutils literal notranslate"><span class="pre">coordinates.coordinate_systems</span></code></a> module.</p>
+<p>Each subclass must define:</p>
+<ul class="simple">
+<li><p>Axis names and labels</p></li>
+<li><p>Dimension (<cite>ndim</cite>)</p></li>
+<li><p>Coordinate transformation methods</p></li>
+<li><p>Metric components (either symbolic or numerical)</p></li>
+</ul>
+</section>
+<section id="mixin-classes">
+<h3>Mixin Classes<a class="headerlink" href="#mixin-classes" title="Link to this heading">#</a></h3>
+<p>Coordinate system classes are assembled using a modular mixin system. This enables independent development
+of transformation logic, symbolic operations, axis metadata, and I/O support without polluting the core base class.</p>
+<p>All mixins reside in the <a class="reference internal" href="../../_as_gen/coordinates.mixins.html#module-coordinates.mixins" title="coordinates.mixins"><code class="xref py py-mod docutils literal notranslate"><span class="pre">coordinates.mixins</span></code></a> package and are grouped by purpose.</p>
+<p>Available mixins include:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Mixin Class</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../../_as_gen/coordinates.mixins.coords.CoordinateOperationsMixin.html#coordinates.mixins.coords.CoordinateOperationsMixin" title="coordinates.mixins.coords.CoordinateOperationsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">CoordinateOperationsMixin</span></code></a></p></td>
+<td><p>Implements coordinate transformation logic, including cartesian-to-native and native-to-cartesian conversions.
+Defines the public <cite>.to_cartesian()</cite> and <cite>.from_cartesian()</cite> methods used by grids and fields.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../_as_gen/coordinates.mixins.core.CoordinateSystemCoreMixin.html#coordinates.mixins.core.CoordinateSystemCoreMixin" title="coordinates.mixins.core.CoordinateSystemCoreMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">CoordinateSystemCoreMixin</span></code></a></p></td>
+<td><p>Provides common metadata interfaces and structural features such as <cite>ndim</cite>, <cite>axes</cite>, and axis name resolution.
+This is the default source of axis name/label properties and <cite>__repr__</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../_as_gen/coordinates.mixins.core.CoordinateSystemIOMixin.html#coordinates.mixins.core.CoordinateSystemIOMixin" title="coordinates.mixins.core.CoordinateSystemIOMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">CoordinateSystemIOMixin</span></code></a></p></td>
+<td><p>Adds metadata serialization logic (e.g., <cite>.to_metadata_dict()</cite> and <cite>.from_metadata_dict()</cite>), used for saving/loading
+coordinate system configurations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../_as_gen/coordinates.mixins.core.CoordinateSystemAxesMixin.html#coordinates.mixins.core.CoordinateSystemAxesMixin" title="coordinates.mixins.core.CoordinateSystemAxesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">CoordinateSystemAxesMixin</span></code></a></p></td>
+<td><p>Supplies helper methods for indexing axes by name, constructing masks over selected coordinates,
+and validating shape compatibility for transformations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../_as_gen/coordinates.mixins.mathops.CoordinateSystemMathMixin.html#coordinates.mixins.mathops.CoordinateSystemMathMixin" title="coordinates.mixins.mathops.CoordinateSystemMathMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">CoordinateSystemMathMixin</span></code></a></p></td>
+<td><p>Defines symbolic tensor and differential geometry operations (e.g., computing gradients, divergence,
+Christoffel symbols, and curvature) based on the coordinate system’s metric structure.
+Required for all systems supporting symbolic operations.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="mixin-type-protocols">
+<h4>Mixin Type Protocols<a class="headerlink" href="#mixin-type-protocols" title="Link to this heading">#</a></h4>
+<p>To enable clean type-checking and cross-compatibility, all mixin interfaces are formalized in the
+<code class="xref py py-mod docutils literal notranslate"><span class="pre">coordinates.mixins._typing</span></code> module.</p>
+<p>If you are extending or using mixin-dependent logic, you should reference these <cite>Protocol</cite> classes
+rather than the mixins themselves for proper type inference. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">coordinates.mixins._typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">SupportsCoordinateOperations</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">uses_transform</span><span class="p">(</span><span class="n">cs</span><span class="p">:</span> <span class="n">SupportsCoordinateOperations</span><span class="p">):</span>
+    <span class="n">cart</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">to_cartesian</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>These protocols enable your own coordinate system implementations or mixin extensions to remain type-safe
+and compatible with downstream tools.</p>
+</section>
+</section>
+</section>
+<section id="custom-coordinate-systems">
+<h2>Custom Coordinate Systems<a class="headerlink" href="#custom-coordinate-systems" title="Link to this heading">#</a></h2>
+<p>If you want to define a new coordinate system in PyMetric, begin by reading the user guide at
+<a class="reference internal" href="building_coordinate_systems.html#coordinates-building"><span class="std std-ref">Coordinate Systems: Building Custom Coordinate Systems</span></a>. This guide outlines how symbolic and numerical tools are used together
+to construct a new coordinate space.</p>
+<p>At a high level, all custom coordinate systems must subclass from one of the two public base classes in
+<a class="reference internal" href="../../_as_gen/coordinates.core.html#module-coordinates.core" title="coordinates.core"><code class="xref py py-mod docutils literal notranslate"><span class="pre">coordinates.core</span></code></a>:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../_as_gen/coordinates.core.OrthogonalCoordinateSystem.html#coordinates.core.OrthogonalCoordinateSystem" title="coordinates.core.OrthogonalCoordinateSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrthogonalCoordinateSystem</span></code></a> — for diagonal metric tensors</p></li>
+<li><p><a class="reference internal" href="../../_as_gen/coordinates.core.CurvilinearCoordinateSystem.html#coordinates.core.CurvilinearCoordinateSystem" title="coordinates.core.CurvilinearCoordinateSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">CurvilinearCoordinateSystem</span></code></a> — for arbitrary curvilinear metrics</p></li>
+</ul>
+<p>These subclasses inherit from the internal protocol <code class="xref py py-class docutils literal notranslate"><span class="pre">_CoordinateSystemBase</span></code>, which
+defines the full symbolic and numeric interface for all coordinate systems.</p>
+<p>Coordinate systems are declared using a symbolic-first model:</p>
+<ul class="simple">
+<li><p>You define symbolic axes, parameters, and a symbolic metric tensor.</p></li>
+<li><p>The system computes all required differential geometry from these definitions.</p></li>
+<li><p>You optionally provide Cartesian transformation logic for I/O or geometry compatibility.</p></li>
+</ul>
+<p>Coordinate classes are constructed modularly using mixins, and may define additional methods or override base behavior.
+Coordinate systems do <strong>not</strong> handle field values, units, or simulation-specific logic — their scope is limited to geometry.</p>
+<p>To create a new coordinate system:</p>
+<ol class="arabic simple">
+<li><p>Choose a base class depending on whether your metric tensor is diagonal or not.</p></li>
+<li><p>Subclass from it and define the required class attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__AXES__</span></code>: coordinate names</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__PARAMETERS__</span></code>: any symbolic parameters</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__construct_metric_tensor_symbol__</span></code> (and optionally its inverse)</p></li>
+</ul>
+</li>
+<li><p>Optionally define conversion methods to and from Cartesian coordinates:</p>
+<ul class="simple">
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">_convert_native_to_cartesian()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">_convert_cartesian_to_native()</span></code></p></li>
+</ul>
+</li>
+<li><p>Optionally define symbolic helper expressions using <a class="reference internal" href="../../_as_gen/coordinates.base.class_expression.html#coordinates.base.class_expression" title="coordinates.base.class_expression"><code class="xref py py-func docutils literal notranslate"><span class="pre">class_expression()</span></code></a>.</p></li>
+</ol>
+<p>The coordinate system will automatically expose all metric-dependent properties,
+such as gradients, Laplacians, and basis vector representations via the symbolic geometry infrastructure.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a detailed walkthrough of the required attributes and symbolic construction process, see:
+<a class="reference internal" href="building_coordinate_systems.html#coordinates-building"><span class="std std-ref">Coordinate Systems: Building Custom Coordinate Systems</span></a>.</p>
+</div>
+</section>
+<section id="expanding-coordinate-system-functionality">
+<h2>Expanding Coordinate System Functionality<a class="headerlink" href="#expanding-coordinate-system-functionality" title="Link to this heading">#</a></h2>
+<section id="coordinate-system-scope">
+<h3>Coordinate System Scope<a class="headerlink" href="#coordinate-system-scope" title="Link to this heading">#</a></h3>
+<p>Coordinate systems in PyMetric are designed to encode <strong>geometric structure</strong>, not simulation or numerical behavior.
+To preserve modularity and clarity, extensions to coordinate systems should remain within their proper domain.</p>
+<p><strong>Coordinate systems should…</strong></p>
+<ul class="simple">
+<li><p>Implement methods for transforming between native and Cartesian coordinates.</p></li>
+<li><p>Define or expose symbolic properties of the space (e.g., scale factors, Jacobians, parameterized tensors).</p></li>
+<li><p>Provide interfaces to symbolic differential geometry (via the metric tensor).</p></li>
+<li><p>Register reusable symbolic expressions (via class expressions).</p></li>
+</ul>
+<p><strong>Coordinate systems should NOT…</strong></p>
+<ul class="simple">
+<li><p>Handle numerical field data or discretization behavior — that belongs in grids or field classes.</p></li>
+<li><p>Handle units — unit tracking is performed by buffer and field layers.</p></li>
+<li><p>Perform low-level numerical math — elementwise math and vector calculus operations are dispatched from higher layers.</p></li>
+</ul>
+<p>In short, coordinate systems provide <strong>symbolic structure</strong>. Other components in the PyMetric
+stack handle <strong>numeric evaluation</strong> and <strong>domain-specific logic</strong>.</p>
+</section>
+<section id="where-to-put-new-methods">
+<h3>Where to Put New Methods<a class="headerlink" href="#where-to-put-new-methods" title="Link to this heading">#</a></h3>
+<p>When adding new behavior to the coordinate system module, consider scope and reuse. Use the following guidelines:</p>
+<ul>
+<li><p><strong>In a subclass</strong>, if the behavior is highly specific or only relevant for one coordinate system.</p>
+<p>Example: A method computing the magnetic field geometry of a tokamak should live in the custom subclass for that geometry.</p>
+</li>
+<li><p><strong>In a mixin</strong>, if the method is general-purpose and could be used by multiple coordinate systems.</p>
+<p>Example: Methods for vectorized coordinate warping, symbolic axis combinations, or caching symbolic derivatives
+should be defined in one of the existing mixins (see Mixin Classes).</p>
+</li>
+<li><p><strong>In a core class</strong> (e.g., <a class="reference internal" href="../../_as_gen/coordinates.core.OrthogonalCoordinateSystem.html#coordinates.core.OrthogonalCoordinateSystem" title="coordinates.core.OrthogonalCoordinateSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrthogonalCoordinateSystem</span></code></a>) if the method is applicable to
+<em>all</em> coordinate systems of that class type and is integral to the way they are defined.</p>
+<p>These methods may also support internal behaviors expected by other parts of the library (e.g., symbolic
+simplification hooks or validation methods).</p>
+</li>
+<li><p><strong>In the protocol base class</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">_CoordinateSystemBase</span></code>) only if the method is architectural — i.e.,
+if it defines a part of the interface contract for all coordinate systems.</p>
+<p>These methods define abstract hooks or system-wide expectations (e.g., symbolic setup behavior, transformation
+interface contracts) and should remain stable.</p>
+</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Never add logic to coordinate systems that duplicates functionality from symbolic geometry modules,
+grids, or field classes. Use delegation and dependency instead.</p>
+</div>
+</section>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h2>
+<p>All coordinate system classes and related functionality must be accompanied by unit tests.
+These tests live in the <code class="docutils literal notranslate"><span class="pre">/tests/test_coordinates</span></code> directory and are essential for ensuring correctness,
+maintainability, and stability as the symbolic infrastructure evolves.</p>
+<p>Each coordinate system should have a dedicated test module or class that validates its behavior, including:</p>
+<ul class="simple">
+<li><p>Metric tensor correctness (symbolic and numerical forms)</p></li>
+<li><p>Inverse metric validation</p></li>
+<li><p>Coordinate transformation accuracy</p></li>
+<li><p>Parameter substitution and expression generation</p></li>
+<li><p>Class expressions (e.g., Jacobians, basis vectors)</p></li>
+<li><p>Edge cases in evaluation (e.g., zero radius, pole singularities)</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>All methods — especially those involving symbolic logic or numerical evaluation — must have corresponding tests.</p>
+<p>Coordinate systems must pass tests <strong>both at the class level</strong> (symbolic structure) and
+<strong>at the instance level</strong> (numerical behavior).</p>
+</div>
+<p>To get started, see the README in <code class="docutils literal notranslate"><span class="pre">tests/test_coordinates/</span></code> for organizational guidance and available testing utilities.
+Most test modules use <a class="reference external" href="https://docs.pytest.org">pytest</a> and may rely on fixtures from <code class="docutils literal notranslate"><span class="pre">conftest.py</span></code> for reusability.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When adding a new coordinate system:</p>
+<ul class="simple">
+<li><p>Add symbolic validation tests in a file like <code class="docutils literal notranslate"><span class="pre">test_my_coords_symbolic.py</span></code>.</p></li>
+<li><p>Add numerical evaluation tests using standard NumPy arrays in <code class="docutils literal notranslate"><span class="pre">test_my_coords_numerical.py</span></code>.</p></li>
+<li><p>Include regression tests for any specialized logic (e.g., anisotropy, constraints).</p></li>
+</ul>
+</div>
+<p>Following these practices ensures that your contributions remain robust and compatible with PyMetric’s growing coordinate infrastructure.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../differential_geometry/dependence.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Symbolic Tensor Dependence API</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../grids/dev.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Geometric Grids: Developer Documentation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-systems-overview">Coordinate Systems: Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-system-hierarchy">Coordinate System Hierarchy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mixin-classes">Mixin Classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mixin-type-protocols">Mixin Type Protocols</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-coordinate-systems">Custom Coordinate Systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expanding-coordinate-system-functionality">Expanding Coordinate System Functionality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-system-scope">Coordinate System Scope</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-put-new-methods">Where to Put New Methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/reference/coordinates/dev.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Eliza Diggins.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

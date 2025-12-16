@@ -1,0 +1,29 @@
+CoordinateSystemIOMixin
+===============================================
+
+.. currentmodule:: coordinates.mixins.core
+
+.. autoclass:: coordinates.mixins.core.CoordinateSystemIOMixin
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+      :recursive:
+   
+      ~CoordinateSystemIOMixin.__init__
+      ~CoordinateSystemIOMixin.from_hdf5
+      ~CoordinateSystemIOMixin.from_json
+      ~CoordinateSystemIOMixin.from_yaml
+      ~CoordinateSystemIOMixin.to_hdf5
+      ~CoordinateSystemIOMixin.to_json
+      ~CoordinateSystemIOMixin.to_yaml
+   
+   
+
+   
+   
+   

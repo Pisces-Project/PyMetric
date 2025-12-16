@@ -1,0 +1,73 @@
+
+
+.. _sphx_glr_auto_quickstart_tutorials:
+
+.. _tutorials:
+
+Tutorials
+---------
+
+.. warning::
+
+    This section of documentation is under development.
+
+The **PyMetric Tutorials** provide guided, narrative-based walkthroughs that
+cover broader topics and workflows. They’re ideal for:
+
+- 🧠 Learning concepts behind structured differential geometry and physical fields
+- 🛠️ Building intuition about PyMetric’s abstractions
+- 🧪 Developing domain-specific simulations or visualizations
+
+These tutorials go beyond isolated examples by combining multiple features of
+PyMetric into coherent, real-world scenarios.
+
+.. contents::
+   :local:
+   :depth: 1
+
+Topics Covered
+++++++++++++++
+
+- 🔰 Getting started with coordinate systems, grids, and fields
+- 🧭 Constructing curvilinear coordinate systems
+- 🧬 Working with symbolic tensors and metrics
+- 📉 Visualizing data fields and derivatives
+- 📦 Saving, loading, and transforming physical data
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Building Fields">
+
+.. only:: html
+
+  .. image:: /auto_quickstart/tutorials/images/thumb/sphx_glr_plot_building_fields_thumb.png
+    :alt:
+
+  :doc:`/auto_quickstart/tutorials/plot_building_fields`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Building Fields</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_quickstart/tutorials/plot_building_fields
+

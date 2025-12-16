@@ -1,0 +1,6 @@
+coordinates.coordinate\_systems.ConicCoordinateSystem.from\_yaml
+================================================================
+
+.. currentmodule:: coordinates.coordinate_systems
+
+.. automethod:: ConicCoordinateSystem.from_yaml

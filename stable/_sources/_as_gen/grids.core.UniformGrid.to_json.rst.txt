@@ -1,0 +1,6 @@
+grids.core.UniformGrid.to\_json
+===============================
+
+.. currentmodule:: grids.core
+
+.. automethod:: UniformGrid.to_json

@@ -1,0 +1,6 @@
+fields.buffers.base.BufferBase.resize
+=====================================
+
+.. currentmodule:: fields.buffers.base
+
+.. automethod:: BufferBase.resize

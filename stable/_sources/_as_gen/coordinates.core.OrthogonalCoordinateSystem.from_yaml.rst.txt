@@ -1,0 +1,6 @@
+coordinates.core.OrthogonalCoordinateSystem.from\_yaml
+======================================================
+
+.. currentmodule:: coordinates.core
+
+.. automethod:: OrthogonalCoordinateSystem.from_yaml

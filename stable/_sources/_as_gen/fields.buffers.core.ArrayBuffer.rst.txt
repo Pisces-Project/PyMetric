@@ -1,0 +1,59 @@
+ArrayBuffer
+===============================
+
+.. currentmodule:: fields.buffers.core
+
+.. autoclass:: fields.buffers.core.ArrayBuffer
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+      :recursive:
+   
+      ~ArrayBuffer.__init__
+      ~ArrayBuffer.as_array
+      ~ArrayBuffer.as_core
+      ~ArrayBuffer.astype
+      ~ArrayBuffer.can_resolve
+      ~ArrayBuffer.conj
+      ~ArrayBuffer.conjugate
+      ~ArrayBuffer.copy
+      ~ArrayBuffer.empty
+      ~ArrayBuffer.empty_like
+      ~ArrayBuffer.flatten
+      ~ArrayBuffer.from_array
+      ~ArrayBuffer.full
+      ~ArrayBuffer.full_like
+      ~ArrayBuffer.list_compatible_classes
+      ~ArrayBuffer.ones
+      ~ArrayBuffer.ones_like
+      ~ArrayBuffer.ravel
+      ~ArrayBuffer.reshape
+      ~ArrayBuffer.resize
+      ~ArrayBuffer.swapaxes
+      ~ArrayBuffer.transpose
+      ~ArrayBuffer.zeros
+      ~ArrayBuffer.zeros_like
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+      :recursive:
+   
+      ~ArrayBuffer.T
+      ~ArrayBuffer.c
+      ~ArrayBuffer.dtype
+      ~ArrayBuffer.ndim
+      ~ArrayBuffer.shape
+      ~ArrayBuffer.size
+   
+   

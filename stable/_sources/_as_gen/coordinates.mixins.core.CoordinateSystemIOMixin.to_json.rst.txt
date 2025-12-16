@@ -1,0 +1,6 @@
+coordinates.mixins.core.CoordinateSystemIOMixin.to\_json
+========================================================
+
+.. currentmodule:: coordinates.mixins.core
+
+.. automethod:: CoordinateSystemIOMixin.to_json

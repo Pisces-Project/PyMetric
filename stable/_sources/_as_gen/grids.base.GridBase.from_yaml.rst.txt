@@ -1,0 +1,6 @@
+grids.base.GridBase.from\_yaml
+==============================
+
+.. currentmodule:: grids.base
+
+.. automethod:: GridBase.from_yaml

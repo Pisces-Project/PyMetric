@@ -1,0 +1,6 @@
+fields.buffers.core.ArrayBuffer.ravel
+=====================================
+
+.. currentmodule:: fields.buffers.core
+
+.. automethod:: ArrayBuffer.ravel

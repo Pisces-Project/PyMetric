@@ -1,0 +1,6 @@
+grids.core.GenericGrid.from\_json
+=================================
+
+.. currentmodule:: grids.core
+
+.. automethod:: GenericGrid.from_json

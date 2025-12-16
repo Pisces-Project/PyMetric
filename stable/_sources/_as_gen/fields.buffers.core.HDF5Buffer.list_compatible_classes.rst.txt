@@ -1,0 +1,6 @@
+fields.buffers.core.HDF5Buffer.list\_compatible\_classes
+========================================================
+
+.. currentmodule:: fields.buffers.core
+
+.. automethod:: HDF5Buffer.list_compatible_classes

@@ -1,0 +1,6 @@
+grids.core.UniformGrid.from\_yaml
+=================================
+
+.. currentmodule:: grids.core
+
+.. automethod:: UniformGrid.from_yaml

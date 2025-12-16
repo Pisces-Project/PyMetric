@@ -1,0 +1,6 @@
+fields.buffers.core.HDF5Buffer.resize
+=====================================
+
+.. currentmodule:: fields.buffers.core
+
+.. automethod:: HDF5Buffer.resize

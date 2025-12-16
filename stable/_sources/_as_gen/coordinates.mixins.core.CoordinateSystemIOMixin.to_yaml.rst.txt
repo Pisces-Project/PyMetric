@@ -1,0 +1,6 @@
+coordinates.mixins.core.CoordinateSystemIOMixin.to\_yaml
+========================================================
+
+.. currentmodule:: coordinates.mixins.core
+
+.. automethod:: CoordinateSystemIOMixin.to_yaml

@@ -1,0 +1,52 @@
+FieldContainer
+=========================
+
+.. currentmodule:: containers
+
+.. autoclass:: containers.FieldContainer
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+      :recursive:
+   
+      ~FieldContainer.__init__
+      ~FieldContainer.add_field
+      ~FieldContainer.empty
+      ~FieldContainer.empty_like
+      ~FieldContainer.filter_by_type
+      ~FieldContainer.from_array
+      ~FieldContainer.from_function
+      ~FieldContainer.full
+      ~FieldContainer.full_like
+      ~FieldContainer.get_field
+      ~FieldContainer.has_field
+      ~FieldContainer.items
+      ~FieldContainer.keys
+      ~FieldContainer.ones
+      ~FieldContainer.ones_like
+      ~FieldContainer.remove_field
+      ~FieldContainer.summary
+      ~FieldContainer.values
+      ~FieldContainer.zeros
+      ~FieldContainer.zeros_like
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+      :recursive:
+   
+      ~FieldContainer.coordinate_system
+      ~FieldContainer.field_names
+      ~FieldContainer.grid
+   
+   

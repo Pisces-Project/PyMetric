@@ -1,0 +1,6 @@
+fields.buffers.base.BufferBase.conjugate
+========================================
+
+.. currentmodule:: fields.buffers.base
+
+.. automethod:: BufferBase.conjugate

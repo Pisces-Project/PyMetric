@@ -1,0 +1,6 @@
+fields.buffers.base.BufferBase.swapaxes
+=======================================
+
+.. currentmodule:: fields.buffers.base
+
+.. automethod:: BufferBase.swapaxes

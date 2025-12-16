@@ -1,0 +1,6 @@
+fields.buffers.base.BufferBase.conj
+===================================
+
+.. currentmodule:: fields.buffers.base
+
+.. automethod:: BufferBase.conj

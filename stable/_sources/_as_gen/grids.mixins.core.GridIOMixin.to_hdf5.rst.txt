@@ -1,0 +1,6 @@
+grids.mixins.core.GridIOMixin.to\_hdf5
+======================================
+
+.. currentmodule:: grids.mixins.core
+
+.. automethod:: GridIOMixin.to_hdf5

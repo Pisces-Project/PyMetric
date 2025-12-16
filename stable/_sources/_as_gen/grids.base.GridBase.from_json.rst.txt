@@ -1,0 +1,6 @@
+grids.base.GridBase.from\_json
+==============================
+
+.. currentmodule:: grids.base
+
+.. automethod:: GridBase.from_json

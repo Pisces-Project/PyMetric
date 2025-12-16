@@ -1,0 +1,6 @@
+coordinates.core.CurvilinearCoordinateSystem.from\_yaml
+=======================================================
+
+.. currentmodule:: coordinates.core
+
+.. automethod:: CurvilinearCoordinateSystem.from_yaml

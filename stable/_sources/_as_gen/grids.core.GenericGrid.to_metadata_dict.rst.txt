@@ -1,0 +1,6 @@
+grids.core.GenericGrid.to\_metadata\_dict
+=========================================
+
+.. currentmodule:: grids.core
+
+.. automethod:: GenericGrid.to_metadata_dict
