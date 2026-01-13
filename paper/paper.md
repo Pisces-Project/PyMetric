@@ -28,9 +28,9 @@ in astrophysics and computational physics. The library was originally created to
 geometric backend for the Pisces project, an in-development, general purpose astrophysical modeling and initial conditions
 library, but has since grown into an independent library due to its size and complexity. In many physical modeling tasks, it is both natural
 and advantageous to work in non-Cartesian coordinate systems that align with the inherent
-symmetries of the system. These coordinate systems can feature complex geometric structure which makes the
+symmetries of the system. These coordinate systems can feature complex geometric structure which, makes the
 explicit handling of differential operations cumbersome. This is particularly true for exotic coordinate
-systems (e.g. homoeoidal coordinate systems). PyMetric provides a unified abstraction
+systems (e.g., homoeoidal coordinate systems). PyMetric provides a unified abstraction
 that decouples the underlying coordinate representation from the operations themselves,
 allowing users to accurately compute gradients, divergences, Laplacians, and related geometric
 quantities through a consistent (and coordinate system agnostic) interface. This makes it easier to prototype and scale
@@ -81,15 +81,15 @@ To address this limitation, PyMetric was developed to be a lightweight library t
 coordinate-aware geometric computation. The library is designed to serve as the geometric backend
 for Pisces and similar modeling systems. It provides a consistent abstraction layer for defining
 coordinate systems, computing differential geometric quantities, and evaluating operators like gradients,
-divergences, and Laplacians; all without requiring the user to manage low-level
+divergences, and Laplacians, all without requiring the user to manage low-level
 details of tensor algebra or coordinate transformations.
 
 PyMetric emphasizes extensibility and modularity through four core interfaces:
 
-- **Coordinate System API** – Enables the definition and use of arbitrary coordinate systems with minimal required knowledge, while supporting symbolic derivation of metric-dependent quantities.
-- **Buffer API** – Provides a backend-agnostic interface for array storage, allowing seamless integration with systems like HDF5, XArray, Dask, and unit-aware arrays.
-- **Differential Geometry API** – Implements low-level, coordinate-independent formulations of core operations such as gradients, divergences, Laplacians, and volume elements.
-- **Grid and Field API** – Supports flexible discretization strategies and a variety of field types, including sparse and dense scalar, vector, and tensor fields.
+- **Coordinate System API** – Enables the definition and use of arbitrary coordinate systems with minimal required knowledge, while supporting symbolic derivation of metric-dependent quantities
+- **Buffer API** – Provides a backend-agnostic interface for array storage, allowing seamless integration with systems like HDF5, XArray, Dask, and unit-aware arrays
+- **Differential Geometry API** – Implements low-level, coordinate-independent formulations of core operations such as gradients, divergences, Laplacians, and volume elements
+- **Grid and Field API** – Supports flexible discretization strategies and a variety of field types, including sparse and dense scalar, vector, and tensor fields
 
 Together, these abstractions form a unified symbolic-numeric pipeline that allows high-level modeling code to operate naturally across diverse geometries and data representations. By standardizing geometric computation and decoupling it from specific coordinate assumptions or backend implementations, PyMetric addresses a longstanding gap in scientific Python infrastructure. This foundation enables Pisces to offer a powerful, composable, and user-friendly environment for building physically accurate models in astrophysics and beyond.
 
@@ -102,10 +102,10 @@ for precise, efficient, and geometry-aware modeling.
 
 A coordinate system in PyMetric is defined minimally by:
 
-- A set of axes labels $(x^1, x^2, \ldots)$,
+- A set of axes labels $(x^1, x^2, \ldots)$
 - Forward and inverse transformations between these coordinates and Cartesian Space $T(x,y,z)$ and
-  $T^{-1}(x^1,x^2,x^3)$.
-- A symbolically defined metric tensor $g_{\mu\nu}$.
+  $T^{-1}(x^1,x^2,x^3)$
+- A symbolically defined metric tensor $g_{\mu\nu}$
 
 From this core specification, PyMetric constructs key geometric quantities, such as the inverse metric
 $g^{\mu\nu}$, the metric density $\sqrt{g}$, and terms appearing in differential operations, such as
@@ -150,9 +150,9 @@ and curvilinear coordinate systems, several avenues for future growth are planne
 
    PyMetric will be extended to support a broader range of tensor calculus operations, including:
 
-   - Covariant derivatives of higher-rank tensors, enabling modeling of tensor transport and geodesic deviation.
+   - Covariant derivatives of higher-rank tensors, enabling modeling of tensor transport and geodesic deviation
    - Tensor contractions and curvature operations, including the Riemann, Ricci, and Einstein tensors,
-     to support simulations in general relativity and cosmology.
+     to support simulations in general relativity and cosmology
 
 These features will allow PyMetric to serve as a general-purpose differential geometry engine suitable
 for high-fidelity modeling in physics, engineering, and applied mathematics.
@@ -162,7 +162,7 @@ for high-fidelity modeling in physics, engineering, and applied mathematics.
    - A key area of expansion is support for relativistic geometries, where the metric tensor is no longer positive-definite and may depend dynamically on spacetime coordinates. Planned features include:
    - General Lorentzian manifolds, including Schwarzschild, Kerr, and FLRW spacetimes, enabling direct modeling of astrophysical systems governed by Einstein’s field equations.
 
-PyMetric is explicitly intended as a modeling and analysis tool, not a time-domain simulation engine.
+PyMetric is explicitly intended to be a modeling and analysis tool, not a time-domain simulation engine.
 It provides geometric infrastructure for constructing and analyzing equations defined on curved spacetimes,
 but does not aim to solve dynamical systems or perform numerical integration of time-evolving fields.
 
